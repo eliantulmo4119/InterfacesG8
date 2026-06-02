@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- SECCIÓN 1: HERO / BIENVENIDA -->
+<section data-stellar-background-ratio="0.3" id="home" class="home_bg custom-home-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+                <div class="hero-text">
+                    <h2>Sistema de Gestión de Inventario</h2>
+                    <p>Vulcanizadora "Elian" - Optimización y control en tiempo real</p>
+                    <a href="{% url 'login' %}" class="btn_one">Iniciar Sesión</a>     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 2: NUESTROS SERVICIOS -->
+<section id="services" class="feature_area">
+    <div class="container"> 
+        <div class="row feature_bg">
+            <div class="section-title text-center">     
+                <h2>Nuestros Servicios</h2>
+                <p>Control automatizado de neumáticos, herramientas y repuestos para un mejor rendimiento.</p>
+            </div>                  
+            <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_feature">
+                    <img src="{% static 'public/assets/img/icon/research.png' %}" alt="icon" />
+                    <h4>Control de Stock</h4>
+                    <p>Monitoreo constante de llantas nuevas y usadas en bodega.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                <div class="single_feature">
+                    <img src="{% static 'public/assets/img/icon/brand.png' %}" alt="icon" />
+                    <h4>Registro de Herramientas</h4>
+                    <p>Evite pérdidas manteniendo un registro de la maquinaria asignada.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+                <div class="single_feature">
+                    <img src="{% static 'public/assets/img/icon/web.png' %}" alt="icon" />
+                    <h4>Reportes en Tiempo Real</h4>
+                    <p>Visualice alertas cuando un producto se esté agotando.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 3: CONTADORES -->
+<section class="counter_feature section-padding">
+    <div class="container">
+        <div class="row text-center">
+    <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+        <div class="single-project">
+            <img src="{% static 'public/assets/img/icon/counter-1.png' %}" alt="icon" />
+            <h2 class="counter-num">100%</h2>
+            <h4>Eficiencia</h4>
+        </div>                                                                                               
+    </div>
+
+    <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+        <div class="single-project">
+            <img src="{% static 'public/assets/img/icon/counter-2.png' %}" alt="icon" />
+            <h2 class="counter-num">En línea</h2>
+            <h4>Disponibilidad</h4>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+        <div class="single-project">
+            <img src="{% static 'public/assets/img/icon/counter-3.png' %}" alt="icon" />
+            <h2 class="counter-num">100%</h2>
+            <h4>Garantía</h4>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+        <div class="single-project">
+            <img src="{% static 'public/assets/img/icon/counter-4.png' %}" alt="icon" />
+            <h2 class="counter-num">Inmediato</h2>
+            <h4>Soporte</h4>
+        </div>
+    </div>
+</div>
+    </div>       
+</section>
+
+<!-- SECCIÓN 4: GALERÍA DE TRABAJO (Ajustada y sin enlaces falsos) -->
+<section id="portfolio" class="portfolio_area section-padding">
+   <div class="container"> 
+    <div class="section-title text-center">
+        <h2>Galería de Trabajo</h2>
+        <p>Conozca nuestras instalaciones y equipamiento de alta calidad.</p>
+    </div>  
+    
+    <div class="portfolio-grid">                                        
+        <div class="row">                                                                                      
+            <div class="col-lg-4 col-sm-6 col-xs-12 portfolio-item mb-4">
+                <div class="single-gallery shadow rounded bg-dark p-2 text-center">
+                    <img src="{% static 'imagenes/hola3.jpg' %}" class="img-fluid rounded" alt="Área de Enllantaje" style="height: 220px; width: 100%; object-fit: cover;">
+                    <h4 class="text-white mt-3 font-weight-bold">Área de Enllantaje</h4>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-xs-12 portfolio-item mb-4">
+                <div class="single-gallery shadow rounded bg-dark p-2 text-center">
+                    <img src="{% static 'imagenes/hola4.jpg' %}" class="img-fluid rounded" alt="Balanceo Computarizado" style="height: 220px; width: 100%; object-fit: cover;">
+                    <h4 class="text-white mt-3 font-weight-bold">Balanceo Computarizado</h4>
+                </div>
+            </div> 
+
+            <div class="col-lg-4 col-sm-6 col-xs-12 portfolio-item mb-4">
+                <div class="single-gallery shadow rounded bg-dark p-2 text-center">
+                    <img src="{% static 'imagenes/hola5.jpg' %}" class="img-fluid rounded" alt="Zona de Reparación y Parches" style="height: 220px; width: 100%; object-fit: cover;">
+                    <h4 class="text-white mt-3 font-weight-bold">Zona de Reparación y Parches</h4>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</section>
+{% endblock %}

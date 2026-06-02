@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Suministros de Reparación - Vulcanizadora Elian{% endblock %}
+
+{% block content %}
+<!-- Cabecera Informativa con Imagen de Fondo sobre Herramientas/Tubos -->
+<section class="page-title-area text-center text-white" style="background: linear-gradient(rgba(206, 210, 218, 0.85), rgba(30, 34, 42, 0.95)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1600') no-repeat center center; background-size: cover; padding: 120px 0 60px 0;">
+    <div class="container">
+        <h1 class="display-5 font-weight-bold"><i class="fa fa-tint text-warning mr-2"></i>Tubos y Cámaras de Aire</h1>
+        <p class="lead text-white-50">Componentes de vulcanización y cámaras internas para máxima retención de presión</p>
+    </div>
+</section>
+
+<!-- Cuerpo del Detalle de Suministros -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2 class="font-weight-bold" style="color: #1e222a;">Soluciones de Sellado y Suministros</h2>
+            <p class="text-muted">Variedad de insumos técnicos para solventar pinchazos y desgastes en cámaras internas.</p>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <!-- Imagen lateral descriptiva -->
+            <div class="col-lg-6 mb-4 text-center">
+                <div class="shadow rounded p-2 bg-white">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800" alt="Insumos de Reparación" class="img-fluid rounded" style="height: 300px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <!-- Bloques informativos de lo que se ofrece -->
+            <div class="col-lg-6 mb-4">
+                <div class="p-4 bg-dark text-white rounded shadow-sm">
+                    <h3 class="font-weight-bold text-warning mb-4">Gama de Productos Disponibles</h3>
+                    
+                    <div class="mb-3">
+                        <h5 class="font-weight-bold text-white"><i class="fa fa-motorcycle text-warning mr-2"></i>Tubos para Motocicletas</h5>
+                        <p class="text-white-50 small">Cámaras elásticas altamente resistentes al calor, ideales para las exigencias de transporte urbano y de campo en las dimensiones estándar de llantas de moto.</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h5 class="font-weight-bold text-white"><i class="fa fa-wrench text-warning mr-2"></i>Cámaras para Vehículos Comerciales</h5>
+                        <p class="text-white-50 small">Tubos reforzados para vehículos livianos y camionetas que requieren un soporte de carga confiable y una contención de aire de larga duración.</p>
+                    </div>
+
+                    <div class="mb-0">
+                        <h5 class="font-weight-bold text-white"><i class="fa fa-shield text-warning mr-2"></i>Parches y Cementos Químicos</h5>
+                        <p class="text-white-50 small">Insumos de calidad industrial para reparaciones en frío y caliente. Sellado hermético permanente que resiste las fricciones constantes del neumático.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
