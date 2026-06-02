@@ -114,6 +114,19 @@
         text-decoration: underline;
         color: #0a58ca;
     }
+
+    /* Alerta elegante para errores de credenciales */
+    .alert-error {
+        padding: 12px;
+        background-color: #f8d7da;
+        color: #842029;
+        border: 1.5px solid #f5c2c7;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 500;
+    }
 </style>
 
 <div class="login-wrapper">
@@ -121,7 +134,15 @@
         <h2>Sistema Inventario</h2>
         <p class="login-subtitle">Inicie sesión para gestionar la vulcanizadora</p>
         
-        <form action="#" method="POST">
+        <!-- Si la vista devuelve un mensaje de error, lo muestra de forma elegante -->
+        {% if mensaje %}
+            <div class="alert-error">
+                {{ mensaje }}
+            </div>
+        {% endif %}
+
+        <!-- Formulario unificado apuntando a la URL del login -->
+        <form action="{% url 'login_view' %}" method="POST">
             {% csrf_token %}
             
             <div class="form-group">
@@ -136,6 +157,7 @@
 
             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
 
+            <!-- El botón de submit ahora dispara este formulario completo -->
             <button type="submit" class="btn-custom">Ingresar al Sistema</button>
         </form>
     </div>

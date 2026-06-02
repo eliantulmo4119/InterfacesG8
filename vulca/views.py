@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login
+from django.shortcuts import render, redirect
 def vulca(request):
     return render(request, 'index.html')
 def login(request):
@@ -13,16 +14,22 @@ def gestion_tubos(request):
     return render(request, 'gestion_tubos.html')
 def contacto(request):
     return render(request, 'contacto.html')
+def hola(request):
+    return render(request, 'hola.html')
 def login_view(request):
     mensaje = ''
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, 
-                            username=username, 
-                            password=password)
+        user = authenticate(request, username=username, password=password)
+        
         if user is not None:
-            auth_login(request,user)
+            auth_login(request, user)
+            
+            return redirect('hola')  # Redirige a la página de inicio después del login exitoso
         else:
+            # Si las credenciales fallan
             mensaje = 'Usuario o contraseña incorrectos'
+            
     return render(request, 'login.html', {'mensaje': mensaje})
