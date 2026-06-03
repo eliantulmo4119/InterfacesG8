@@ -1,3 +1,3 @@
-## Clientes
+## Inventario
 
-Permite registrar y administrar la informacion de los clientes del negocio.
+Controla el stock de productos, insumos y repuestos disponibles.
