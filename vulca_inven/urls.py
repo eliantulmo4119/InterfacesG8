@@ -5,4 +5,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vulca.urls')), 
 ]
-# test
+# test1
