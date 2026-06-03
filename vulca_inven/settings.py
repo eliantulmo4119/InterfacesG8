@@ -1,3 +1,4 @@
+# Configuracion principal de Django
 """
 Django settings for vulca_inven project.
 
