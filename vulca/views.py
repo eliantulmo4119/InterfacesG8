@@ -6,6 +6,7 @@ def vulca(request):
     return render(request, 'index.html')
 def login(request):
     return render(request, 'login.html')
+# Vista para mostrar nuestra historia.
 def nosotros(request):
     return render(request, 'nosotros.html')
 def control_neu(request):
