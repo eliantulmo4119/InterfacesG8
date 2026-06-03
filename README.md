@@ -1,3 +1,3 @@
-## Dashboard
+## Modulo Inventario
 
-Permite visualizar informacion general del negocio.
+Control de llantas y productos disponibles.
