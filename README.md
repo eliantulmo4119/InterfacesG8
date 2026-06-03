@@ -1,3 +1,3 @@
-## Reportes
+## Clientes
 
-Permite generar consultas y reportes de la informacion registrada en el sistema.
+Permite registrar y administrar la informacion de los clientes del negocio.
