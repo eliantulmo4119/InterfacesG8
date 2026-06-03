@@ -1,3 +1,4 @@
-## Modulo Servicios
+## Instalacion
 
-Registro de reparaciones y vulcanizaciones.
+python manage.py migrate
+python manage.py runserver
