@@ -1,3 +1,3 @@
-## Base de Datos
+## Objetivo
 
-El sistema utiliza SQLite para almacenar informacion.
+Facilitar la administracion de una vulcanizadora.
