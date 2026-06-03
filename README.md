@@ -1,3 +1,3 @@
-## Objetivo
+## Version
 
-Facilitar la administracion de una vulcanizadora.
+Version 1.0 del sistema Vulcanizador Elian.
