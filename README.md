@@ -1,3 +1,3 @@
-## Modulo Inventario
+## Modulo Servicios
 
-Control de llantas y productos disponibles.
+Registro de reparaciones y vulcanizaciones.
