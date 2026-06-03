@@ -1,3 +1,3 @@
-## Inventario
+## Servicios
 
-Controla el stock de productos, insumos y repuestos disponibles.
+Gestiona los servicios ofrecidos por la vulcanizadora.
