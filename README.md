@@ -1,3 +1,3 @@
-## Proveedores
+## Usuarios
 
-Administra la informacion de los proveedores de productos y repuestos.
+Permite administrar las cuentas de acceso al sistema.
