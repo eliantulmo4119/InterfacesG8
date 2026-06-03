@@ -1,3 +1,3 @@
-## Usuarios
+## Seguridad
 
-Permite administrar las cuentas de acceso al sistema.
+Incluye mecanismos para proteger la informacion del sistema.
