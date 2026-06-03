@@ -1,3 +1,3 @@
-## Configuracion
+## Respaldo de Datos
 
-Permite personalizar parametros generales del sistema.
+Facilita la creacion de copias de seguridad de la informacion.
