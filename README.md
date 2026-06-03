@@ -1,3 +1,3 @@
-## Historial de Servicios
+## Configuracion
 
-Almacena el registro de los trabajos realizados a cada cliente.
+Permite personalizar parametros generales del sistema.
