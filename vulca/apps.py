@@ -1,3 +1,4 @@
+# Configuracion de la aplicacion principal
 from django.apps import AppConfig
 
 
