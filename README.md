@@ -1,4 +1,3 @@
-## Instalacion
+## Base de Datos
 
-python manage.py migrate
-python manage.py runserver
+El sistema utiliza SQLite para almacenar informacion.
