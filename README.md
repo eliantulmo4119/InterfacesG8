@@ -1,5 +1,3 @@
-## Tecnologías
+## Dashboard
 
-- Python
-- Django
-- SQLite
+Permite visualizar informacion general del negocio.
