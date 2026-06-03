@@ -1,3 +1,3 @@
-## Servicios
+## Facturacion
 
-Gestiona los servicios ofrecidos por la vulcanizadora.
+Permite emitir comprobantes por los servicios realizados.
