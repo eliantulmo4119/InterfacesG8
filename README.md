@@ -1,3 +1,3 @@
-## Version
+## Reportes
 
-Version 1.0 del sistema Vulcanizador Elian.
+Permite generar consultas y reportes de la informacion registrada en el sistema.
