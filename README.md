@@ -1,3 +1,3 @@
-## Facturacion
+## Proveedores
 
-Permite emitir comprobantes por los servicios realizados.
+Administra la informacion de los proveedores de productos y repuestos.
