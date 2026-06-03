@@ -1,3 +1,4 @@
+# Rutas principales del sistema
 from django.urls import path
 from . import views
 
