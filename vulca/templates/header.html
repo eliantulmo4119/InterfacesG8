@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="preloader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+</div>
+    
+<header class="site-navbar js-sticky-header site-navbar-target" role="banner" style="background-color: rgba(12, 26, 53, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.3); padding: 10px 0;">
+    <div class="container">
+        <div class="row align-items-center">       
+            
+            <div class="col-6 col-xl-2">
+                <h1 class="mb-0 site-logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'imagenes/hola2.png' %}" alt="Logo" style="max-height: 45px;">
+                    </a>
+                </h1>
+            </div>
+
+            <div class="col-12 col-md-10 d-none d-xl-block">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                        <li><a href="{% url 'index' %}" class="nav-link" style="color: #ffffff; font-weight: 600;"><i class="fa fa-home" style="color: #ffc107; margin-right: 5px;"></i>Inicio</a></li>   
+                        
+                        <li><a class="nav-link" href="{% url 'nosotros' %}" style="color: #ffffff; font-weight: 600;"><i class="fa fa-users" style="color: #ffc107; margin-right: 5px;"></i>Nosotros</a></li>
+                        
+                        <li class="has-children">
+                            <a  class="nav-link" style="color: #ffffff; font-weight: 600;"><i class="fa fa-wrench" style="color: #ffc107; margin-right: 5px;"></i>Servicios</a>
+                            <ul class="dropdown" style="background-color: #1e222a; border: 1px solid #333;">
+                                <li><a href="{% url 'control_neu' %}" class="nav-link" style="color: #ffffff;"><i class="fa fa-circle-o small mr-2"></i>Catálogo de Neumáticos</a></li>
+                                <li><a href="{% url 'gestion_tubos' %}" class="nav-link" style="color: #ffffff;"><i class="fa fa-circle-o small mr-2"></i>Gestión de Tubos</a></li>
+                            </ul>
+                        </li>                    
+                        
+                        <li><a class="nav-link" href="{% url 'contacto' %}" style="color: #ffffff; font-weight: 600;"><i class="fa fa-envelope" style="color: #ffc107; margin-right: 5px;"></i>Contacto</a></li> 
+                        
+                        <li class="ml-3 d-inline-block">
+                            <a class="nav-link" href="{% url 'login' %}" style="color: #1e222a !important; background-color: #ffc107; font-weight: bold; padding: 8px 20px; border-radius: 20px; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+                                <i class="fa fa-sign-in" style="margin-right: 5px;"></i>Iniciar Sesión
+                            </a>
+                        </li>                     
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;">
+                <a href="#" class="site-menu-toggle js-menu-toggle float-right" style="color: #ffffff;">
+                    <span class="icon-menu h3"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>

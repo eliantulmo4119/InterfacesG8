@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Catálogo de Neumáticos - Vulcanizadora Elian{% endblock %}
+
+{% block content %}
+<!-- Cabecera Informativa con Imagen de Fondo sobre Llantas -->
+<section class="page-title-area text-center text-white" style="background: linear-gradient(rgba(212, 215, 221, 0.85), rgba(30, 34, 42, 0.95)), url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=1600') no-repeat center center; background-size: cover; padding: 120px 0 60px 0;">
+    <div class="container">
+        <h1 class="display-5 font-weight-bold"><i class="fa fa-car text-warning mr-2"></i>Catálogo de Neumáticos</h1>
+        <p class="lead text-white-50">Variedad, marcas y medidas de llantas disponibles para todo tipo de vehículo</p>
+    </div>
+</section>
+
+<!-- Cuerpo del Catálogo -->
+<section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2 class="font-weight-bold" style="color: #1e222a;">Llantas Disponibles para Comercialización</h2>
+            <p class="text-muted">Ofrecemos un inventario diversificado para cubrir las necesidades de transporte y carga pesada en La Maná.</p>
+        </div>
+
+        <div class="row">
+            <!-- Tipo 1: Autos y Camionetas -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="bg-white p-3 rounded shadow-sm text-center border h-100">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600" alt="Llantas para Auto" class="img-fluid rounded mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+                    <h4 class="font-weight-bold" style="color: #1e222a;">Llantas para Auto y Suv</h4>
+                    <p class="text-secondary small">Disponemos de neumáticos nuevos de alta durabilidad en las medidas más comerciales del mercado (R13, R14, R15) diseñados para un agarre óptimo en asfalto húmedo y seco.</p>
+                </div>
+            </div>
+
+            <!-- Tipo 2: Carga Pesada y Camiones -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="bg-white p-3 rounded shadow-sm text-center border h-100">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=600" alt="Llantas para Camión" class="img-fluid rounded mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+                    <h4 class="font-weight-bold" style="color: #1e222a;">Llantas de Carga y Camión</h4>
+                    <p class="text-secondary small">Modelos de neumáticos reforzados multicapa con diseños de tracción profunda, ideales para transporte pesado, camiones de carga y maquinaria que opera en terrenos difíciles de la provincia.</p>
+                </div>
+            </div>
+
+            <!-- Tipo 3: Neumáticos de Ocasión -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="bg-white p-3 rounded shadow-sm text-center border h-100">
+                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=600" alt="Llantas Usadas" class="img-fluid rounded mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+                    <h4 class="font-weight-bold" style="color: #1e222a;">Neumáticos de Ocasión</h4>
+                    <p class="text-secondary small">Contamos con un stock seleccionado de llantas usadas y de media vida. Cada una de ellas pasa por un estricto control de presión y estado de labrado para garantizar un rodado seguro y económico.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
