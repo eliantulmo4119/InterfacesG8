@@ -1,1 +1,1 @@
-feat: implementar control de inventario
+feat: agregar menú de navegación principal
