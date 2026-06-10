@@ -1,1 +1,1 @@
-feat: agregar registro de empleados
+feat: añadir gestión de proveedores
