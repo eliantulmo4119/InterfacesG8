@@ -1,1 +1,1 @@
-feat: exportar reportes a PDF
+feat: agregar registro de auditoría del sistema
