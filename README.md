@@ -1,1 +1,1 @@
-feat: desarrollar formulario de registro de clientes
+feat: agregar validación de cédula
