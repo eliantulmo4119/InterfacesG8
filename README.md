@@ -1,1 +1,1 @@
-feat: agregar botón de edición de clientes
+feat: implementar búsqueda por nombre de cliente
