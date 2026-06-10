@@ -1,1 +1,1 @@
-corregir cálculo del costo total de servicios
+mejorar diseño de la página principal
