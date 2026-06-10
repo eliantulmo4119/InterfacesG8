@@ -1,1 +1,1 @@
-refactor: mejorar estructura del módulo de ventas
+refactor: simplificar lógica de autenticación
