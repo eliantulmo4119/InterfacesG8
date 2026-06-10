@@ -16,7 +16,7 @@ def gestion_tubos(request):
 def contacto(request):
     return render(request, 'contacto.html')
 def hola(request):
-    return render(request, 'hola.html')
+    return render(request, 'dashboard.html')
 def login_view(request):
     mensaje = ''
     
@@ -28,7 +28,7 @@ def login_view(request):
         if user is not None:
             auth_login(request, user)
             
-            return redirect('hola')  # Redirige a la página de inicio después del login exitoso
+            return redirect('dashboard')  
         else:
             # Si las credenciales fallan
             mensaje = 'Usuario o contraseña incorrectos'
