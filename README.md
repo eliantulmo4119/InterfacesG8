@@ -1,1 +1,1 @@
-docs: actualizar manual técnico
+test: validar flujo completo de facturación
