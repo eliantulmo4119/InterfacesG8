@@ -1,1 +1,1 @@
-feat(inventario): registrar entrada de productos
+feat(inventario): mostrar alertas de stock bajo
