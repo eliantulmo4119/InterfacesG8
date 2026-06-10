@@ -1,1 +1,1 @@
-style: adaptar diseño para dispositivos móviles
+docs: documentar estructura de la base de datos
