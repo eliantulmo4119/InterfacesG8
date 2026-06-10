@@ -1,1 +1,1 @@
-feat: mostrar alertas de inventario bajo
+feat: registrar entrada de mercadería
