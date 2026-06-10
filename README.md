@@ -1,1 +1,1 @@
-fix(auth): solucionar validación incorrecta de credenciales
+fix(database): evitar registros duplicados en la tabla clientes
