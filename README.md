@@ -1,1 +1,1 @@
-feat: crear layout base de la aplicación
+feat: agregar logo de Vulcanizadora Elian
