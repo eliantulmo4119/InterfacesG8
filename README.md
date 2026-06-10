@@ -1,1 +1,1 @@
-feat: registrar compras de neumáticos
+feat: implementar control de inventario
