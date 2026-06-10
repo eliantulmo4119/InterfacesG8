@@ -1,1 +1,1 @@
-feat: crear detalle de venta
+feat: implementar pagos en efectivo
