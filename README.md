@@ -1,1 +1,1 @@
-refactor: simplificar lógica de autenticación
+refactor: reutilizar componentes de formularios
