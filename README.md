@@ -1,1 +1,1 @@
-feat: crear estructura inicial del proyecto
+feat: crear layout base de la aplicación
