@@ -1,1 +1,1 @@
-fix: corregir problema de filtrado por fechas
+fix: evitar registros vacíos en formularios
