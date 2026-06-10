@@ -1,1 +1,1 @@
-feat: calcular total de la factura
+feat: generar número secuencial de factura
