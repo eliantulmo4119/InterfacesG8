@@ -1,1 +1,1 @@
-fix(database): evitar registros duplicados en la tabla clientes
+fix(busqueda): optimizar búsqueda por nombre de cliente
