@@ -1,1 +1,1 @@
-fix: corregir error al generar reportes PDF
+fix: corregir cálculo de impuestos
