@@ -1,1 +1,1 @@
-feat(dashboard): mostrar resumen de ingresos diarios
+fix(clientes): corregir error al editar información de clientes
