@@ -1,2 +1,1 @@
-fix: solucionar error de redirección después del login
-
+fix: corregir error al generar reportes PDF
