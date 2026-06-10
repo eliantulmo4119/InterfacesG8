@@ -1,1 +1,1 @@
-fix(clientes): corregir error al editar información de clientes
+fix(inventario): corregir actualización de stock después de una venta
