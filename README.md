@@ -1,1 +1,1 @@
-feat: agregar campo dirección en clientes
+fix: corregir etiqueta del formulario de registro
