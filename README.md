@@ -1,1 +1,1 @@
-feat: generar número secuencial de factura
+feat: registrar apertura de caja
