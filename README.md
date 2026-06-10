@@ -1,1 +1,1 @@
-feat: mostrar historial completo del cliente
+feat: agregar estado pendiente a las órdenes
