@@ -1,1 +1,1 @@
-feat: agregar menú de navegación principal
+feat: implementar cierre de sesión
