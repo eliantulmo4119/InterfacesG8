@@ -1,1 +1,1 @@
-feat: implementar selección de técnico responsable
+feat: calcular total de la factura
