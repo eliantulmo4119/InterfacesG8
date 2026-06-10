@@ -1,1 +1,1 @@
-feat: añadir gestión de proveedores
+feat: registrar compras de neumáticos
