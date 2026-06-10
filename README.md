@@ -1,1 +1,1 @@
-fix: corregir visualización de reportes
+refactor: mejorar estructura del módulo de ventas
