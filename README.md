@@ -1,1 +1,1 @@
-feat: crear pantalla de inicio de sesión
+feat: implementar recuperación de contraseña
