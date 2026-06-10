@@ -1,4 +1,5 @@
 {% load static %}
+<<<<<<< HEAD
 {% include "private/header.html" %}
 
 <div class="main-panel">
@@ -53,3 +54,30 @@
     </div>
   </div>
   {% include "private/footer.html" %}
+=======
+{% include 'private/header.html' %}
+<h1>Listado de usuarios</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.username }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>
+              
+             </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+{% include 'private/footer.html' %}
+>>>>>>> 42456cd6253a57af90d9b0b8663fe9c39b75d9de
