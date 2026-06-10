@@ -1,1 +1,1 @@
-feat: registrar apertura de caja
+feat: mostrar resumen de ventas diarias
