@@ -1,1 +1,1 @@
-feat: crear tabla para listar clientes
+feat: agregar botón de edición de clientes
