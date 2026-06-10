@@ -1,1 +1,1 @@
-feat: implementar pagos en efectivo
+feat: agregar cálculo automático de IVA
