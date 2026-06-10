@@ -1,1 +1,1 @@
-feat: registrar costo de materiales
+feat: calcular total de la factura
