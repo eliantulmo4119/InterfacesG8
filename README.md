@@ -1,1 +1,1 @@
-feat: agregar registro de clientes en Vulcanizadora Elian
+corregir cálculo del costo total de servicios
