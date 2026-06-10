@@ -1,1 +1,1 @@
-feat: registrar parches disponibles
+feat: mostrar alertas de inventario bajo
