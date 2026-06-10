@@ -1,1 +1,1 @@
-feat: generar reporte de inventario actual
+feat: exportar reportes a PDF
