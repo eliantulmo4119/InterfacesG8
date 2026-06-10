@@ -1,1 +1,1 @@
-feat: registrar entrada de mercadería
+fix: corregir cálculo de impuestos
