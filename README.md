@@ -1,1 +1,1 @@
-feat: registrar modelos de neumáticos
+feat: crear detalle de venta
