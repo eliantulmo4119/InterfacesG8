@@ -1,1 +1,1 @@
-feat: agregar logo de Vulcanizadora Elian
+feat: desarrollar formulario de registro de clientes
