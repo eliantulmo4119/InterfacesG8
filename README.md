@@ -1,1 +1,1 @@
-feat(reportes): exportar reportes a Excel
+feat(auth): implementar recuperación de contraseña
