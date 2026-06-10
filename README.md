@@ -1,1 +1,1 @@
-feat: agregar estado finalizado a las órdenes
+feat: generar reporte de inventario actual
