@@ -1,1 +1,1 @@
-feat(auth): implementar recuperación de contraseña
+feat(dashboard): mostrar resumen de ingresos diarios
