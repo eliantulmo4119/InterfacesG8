@@ -1,1 +1,1 @@
-feat: crear layout base de la aplicación
+feat: implementar selección de técnico responsable
