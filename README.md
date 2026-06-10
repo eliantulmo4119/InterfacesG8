@@ -1,1 +1,1 @@
-mejorar diseño de la página principal
+solucionar error al eliminar registros de servicios
