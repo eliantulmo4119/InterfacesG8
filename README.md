@@ -1,1 +1,1 @@
-feat(servicios): agregar observaciones en órdenes de trabajo
+feat(inventario): registrar entrada de productos
