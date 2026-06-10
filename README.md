@@ -1,1 +1,1 @@
-feat: mostrar resumen de ventas diarias
+feat: registrar neumáticos nuevos
