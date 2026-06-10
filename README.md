@@ -1,1 +1,1 @@
-feat: implementar recuperación de contraseña
+feat: agregar registro de empleados
