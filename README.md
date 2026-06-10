@@ -1,1 +1,1 @@
-style: actualizar interfaz de órdenes de trabajo
+style: adaptar diseño para dispositivos móviles
