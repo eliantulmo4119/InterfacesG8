@@ -1,1 +1,1 @@
-feat: implementar cierre de sesión
+feat: registrar modelos de neumáticos
