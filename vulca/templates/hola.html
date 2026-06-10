@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión - Modificar Tipo de Inventario</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --border-color: #d1d5db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-status {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .user-welcome {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+
+        .form-title {
+            font-size: 1.3rem;
+            margin-top: 0;
+            color: #374151;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4b5563;
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        select, 
+        textarea {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background-color: #fff;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .checkbox-group {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-cancel {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-cancel:hover {
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-status">
+            <h1 class="user-welcome">¡Bienvenido, {{ user.username }}!</h1>
+            <small style="color: #6b7280;">Rol: Administrador de Inventario</small>
+        </div>
+
+        <h2 class="form-title">Modificar Parámetros de Tipo de Inventario</h2>
+
+        <form action="/inventario/tipo/actualizar/" method="POST">
+            
+            {% csrf_token %}
+
+            <input type="hidden" name="tipo_id" value="{{ tipo_inventario.id }}">
+
+            <div class="form-grid">
+                
+                <div class="form-group">
+                    <label for="codigo_tipo">Código de Categoría *</label>
+                    <input type="text" id="codigo_tipo" name="codigo_tipo" value="{{ tipo_inventario.codigo }}" placeholder="Ej. MP-01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre_tipo">Nombre del Tipo *</label>
+                    <input type="text" id="nombre_tipo" name="nombre_tipo" value="{{ tipo_inventario.nombre }}" placeholder="Ej. Materia Prima" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="descripcion">Descripción Detallada</label>
+                    <textarea id="descripcion" name="descripcion" rows="3" placeholder="Detalles sobre el uso o almacenamiento de este tipo de productos...">{{ tipo_inventario.descripcion }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="metodo_valoracion">Método de Valoración *</label>
+                    <select id="metodo_valoracion" name="metodo_valoracion" required>
+                        <option value="PEPS" {% if tipo_inventario.metodo == 'PEPS' %}selected{% endif %}>PEPS (Primeras en entrar, Primeras en salir)</option>
+                        <option value="UEPS" {% if tipo_inventario.metodo == 'UEPS' %}selected{% endif %}>UEPS (Últimas en entrar, Primeras en salir)</option>
+                        <option value="PMP" {% if tipo_inventario.metodo == 'PMP' %}selected{% endif %}>PMP (Precio Medio Ponderado)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cuenta_contable">Cuenta Contable Asociada</label>
+                    <input type="text" id="cuenta_contable" name="cuenta_contable" value="{{ tipo_inventario.cuenta_contable }}" placeholder="Ej. 1.1.05.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="stock_minimo_defecto">Stock Mínimo por Defecto</label>
+                    <input type="number" id="stock_minimo_defecto" name="stock_minimo_defecto" value="{{ tipo_inventario.stock_minimo }}" min="0" placeholder="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="stock_maximo_defecto">Capacidad Máxima por Defecto</label>
+                    <input type="number" id="stock_maximo_defecto" name="stock_maximo_defecto" value="{{ tipo_inventario.stock_maximo }}" min="0" placeholder="1000">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="permite_stock_negativo" name="permite_stock_negativo" {% if tipo_inventario.permite_negativo %}checked{% endif %}>
+                    <label for="permite_stock_negativo">¿Permite vender sin stock (saldo negativo)?</label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="esta_activo" name="esta_activo" {% if tipo_inventario.activo %}checked{% endif %}>
+                    <label for="esta_activo">Categoría Activa (Disponible para nuevos productos).</label>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn-submit full-width">Actualizar Tipo de Inventario</button>
+            <a href="/inventario/tipos/lista/" class="btn-cancel">Cancelar y regresar</a>
+
+        </form>
+    </div>
+
+</body>
+</html>
