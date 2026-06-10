@@ -1,1 +1,1 @@
-refactor: reutilizar componentes de formularios
+style: actualizar interfaz de órdenes de trabajo
