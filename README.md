@@ -1,1 +1,1 @@
-fix: corregir etiqueta del formulario de registro
+feat: crear estructura inicial del proyecto
