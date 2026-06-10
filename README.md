@@ -1,1 +1,2 @@
-fix: corregir error al registrar servicios
+fix: solucionar error de redirección después del login
+
