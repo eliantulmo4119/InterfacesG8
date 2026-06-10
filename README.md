@@ -1,1 +1,1 @@
-fix(busqueda): optimizar búsqueda por nombre de cliente
+feat: implementar control de inventario de neumáticos
