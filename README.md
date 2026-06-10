@@ -1,1 +1,1 @@
-feat: añadir observaciones en órdenes de trabajo
+feat: mostrar historial completo del cliente
