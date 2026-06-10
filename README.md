@@ -1,1 +1,1 @@
-feat: agregar estado pendiente a las órdenes
+feat: agregar estado finalizado a las órdenes
