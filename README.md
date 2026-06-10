@@ -1,1 +1,1 @@
-fix: evitar registros vacíos en formularios
+fix: corregir visualización de reportes
