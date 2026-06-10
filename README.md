@@ -1,1 +1,1 @@
-feat: registrar neumáticos nuevos
+feat: registrar parches disponibles
