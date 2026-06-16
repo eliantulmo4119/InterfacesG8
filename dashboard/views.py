@@ -12,7 +12,7 @@ def listar_usuarios(request):
         'usuarios': usuarios
     }
     return render(request, 'private/listar_usuarios.html', contexto)
-
+# --- Vista para crear un nuevo usuario ---
 def crear_usuario(request):
     if request.method=='POST':
         username_req=request.POST.get('username')
