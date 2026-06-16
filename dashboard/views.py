@@ -13,20 +13,18 @@ def listar_usuarios(request):
     return render(request, 'private/listar_usuarios.html', contexto)
 
 def crear_usuario(request):
-    if request.method == 'POST':
-        username_req = request.POST.get('username')
-        email_req = request.POST.get('email')
-        password_req = request.POST.get('password')
+    if request.method=='POST':
+        username_req=request.POST.get('username')
+        email_req=request.POST.get('email')
+        password_req=request.POST.get('password')
         
         if not username_req or not email_req or not password_req:
             messages.error(request, 'Todos los campos son obligatorios.')
-            # CORREGIDO AQUÍ (añadida la 's'):
             return render(request, 'private/crear_usuarios.html')
             
         try:
             if User.objects.filter(username=username_req).exists():
                 messages.error(request, f'El nombre de usuario "{username_req}" ya está en uso.')
-                # CORREGIDO AQUÍ (añadida la 's'):
                 return render(request, 'private/crear_usuarios.html')
                 
             nuevo_usuario = User.objects.create_user(
@@ -41,8 +39,6 @@ def crear_usuario(request):
             
         except Exception as e:
             messages.error(request, f'Ocurrió un error al registrar el usuario: {str(e)}')
-            # CORREGIDO AQUÍ (añadida la 's'):
             return render(request, 'private/crear_usuarios.html')
             
-    # CORREGIDO AQUÍ (cuando entra por GET, añadida la 's'):
     return render(request, 'private/crear_usuarios.html')
