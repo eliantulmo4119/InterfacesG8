@@ -29,14 +29,12 @@ def crear_usuario(request):
 
         try:
             if User.objects.filter(username=username_req).exists():
-<<<<<<< Updated upstream
                 messages.error(
                     request,
                     f'El nombre de usuario "{username_req}" ya está en uso.'
                 )
-=======
                 messages.error(request, f'El nombre de usuario "{username_req}" ya está en uso.')
->>>>>>> Stashed changes
+
                 return render(request, 'private/crear_usuarios.html')
 
             nuevo_usuario = User.objects.create_user(
@@ -55,7 +53,6 @@ def crear_usuario(request):
             return redirect('listar_usuarios')
 
         except Exception as e:
-<<<<<<< Updated upstream
             messages.error(
                 request,
                 f'Ocurrió un error al registrar el usuario: {str(e)}'
@@ -86,10 +83,16 @@ def eliminar_usuario(request, id):
             f'Error al eliminar el usuario: {str(e)}'
         )
 
-    return redirect('listar_usuarios')
-=======
-            messages.error(request, f'Ocurrió un error al registrar el usuario: {str(e)}')
-            return render(request, 'private/crear_usuarios.html')
+        return redirect('listar_usuarios')
+    messages.error(request, f'Ocurrió un error al registrar el usuario: {str(e)}')
+    return render(request, 'private/crear_usuarios.html')
             
     return render(request, 'private/crear_usuarios.html')
->>>>>>> Stashed changes
+
+def eliminar_usuario(request, usuario_id):
+    usuario = User.objects.get(id=usuario_id)
+    usuario.delete()
+    
+    messages.success(request, 'El usuario ha sido eliminado correctamente del sistema.')
+    return redirect('listar_usuarios')
+
