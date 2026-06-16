@@ -196,7 +196,6 @@
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          // Reemplaza dinámicamente el id provisional de Django por el capturado en el botón
           let urlBase = "{% url 'eliminar_usuario' 0 %}";
           window.location.href = urlBase.replace('0', usuarioId);
         }
