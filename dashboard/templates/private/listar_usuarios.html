@@ -79,6 +79,23 @@
 </div>
 
 <script>
+  // --- DETECTAR Y MOSTRAR MENSAJE DE ÉXITO DESDE EL BACKEND ---
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+        Swal.fire({
+          title: '¡Usuario Creado!',
+          text: '{{ message }}',
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          timer: 3500,
+          timerProgressBar: true
+        });
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  // --- CONTROL DEL BOTÓN NUEVO USUARIO ---
   document.getElementById('btnNuevoUsuario').addEventListener('click', function() {
     Swal.fire({
       title: '¿Registrar nuevo usuario?',
@@ -95,7 +112,6 @@
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        // Redirección vinculada al nombre de la url de tu views.py
         window.location.href = "{% url 'crear_usuario' %}";
       }
     });

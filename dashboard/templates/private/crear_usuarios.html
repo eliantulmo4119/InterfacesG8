@@ -96,7 +96,6 @@
       cancelButtonText: 'Continuar editando'
     }).then((result) => {
       if (result.isConfirmed) {
-        // Redirige al listado usando el alias correcto 'listar_usuarios'
         window.location.href = "{% url 'listar_usuarios' %}";
       }
     });
@@ -106,7 +105,6 @@
   const formulario = document.getElementById('formCrearUsuario');
   
   formulario.addEventListener('submit', function(e) {
-    // Evitamos el envío inmediato para mostrar la confirmación
     e.preventDefault();
 
     Swal.fire({
@@ -120,7 +118,6 @@
       cancelButtonText: 'Revisar datos'
     }).then((result) => {
       if (result.isConfirmed) {
-        // Alerta estética de carga para evitar múltiples clics
         Swal.fire({
           title: 'Guardando usuario...',
           text: 'Por favor espere un momento.',
@@ -129,7 +126,6 @@
             Swal.showLoading();
           }
         });
-        // Enviamos el formulario formalmente a Django
         formulario.submit();
       }
     });
