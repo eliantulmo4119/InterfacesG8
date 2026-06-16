@@ -1,14 +1,48 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 def dashboard(request):
     return render(request, 'dashboard.html')
 
-from django.contrib.auth.models import User
 def listar_usuarios(request):
     usuarios = User.objects.all()
     contexto = {
         'usuarios' : usuarios
     }
     return render(request, 'private/listar_usuarios.html', contexto)
+
+def crear_usuario(request):
+    if request.method == 'POST':
+        username_req = request.POST.get('username')
+        email_req = request.POST.get('email')
+        password_req = request.POST.get('password')
+        
+        if not username_req or not email_req or not password_req:
+            messages.error(request, 'Todos los campos son obligatorios.')
+            # CORREGIDO AQUÍ (añadida la 's'):
+            return render(request, 'private/crear_usuarios.html')
+            
+        try:
+            if User.objects.filter(username=username_req).exists():
+                messages.error(request, f'El nombre de usuario "{username_req}" ya está en uso.')
+                # CORREGIDO AQUÍ (añadida la 's'):
+                return render(request, 'private/crear_usuarios.html')
+                
+            nuevo_usuario = User.objects.create_user(
+                username=username_req,
+                email=email_req,
+                password=password_req
+            )
+            nuevo_usuario.save()
+            
+            messages.success(request, f'El usuario {username_req} ha sido creado con éxito.')
+            return redirect('listar_usuarios')
+            
+        except Exception as e:
+            messages.error(request, f'Ocurrió un error al registrar el usuario: {str(e)}')
+            # CORREGIDO AQUÍ (añadida la 's'):
+            return render(request, 'private/crear_usuarios.html')
+            
+    # CORREGIDO AQUÍ (cuando entra por GET, añadida la 's'):
+    return render(request, 'private/crear_usuarios.html')
