@@ -1,5 +1,4 @@
 {% load static %}
-<<<<<<< Updated upstream
 {% include "private/header.html" %}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -9,7 +8,7 @@
   <div class="content-wrapper">
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm border-0">
           <div class="card-body">
             
             {% if messages %}
@@ -20,12 +19,15 @@
               {% endfor %}
             {% endif %}
             
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
               <div>
-                <h4 class="card-title mb-1">Lista de Usuarios del Sistema</h4>
-                <p class="card-description text-muted mb-0">Personal administrativo y operativo de la vulcanizadora</p>
+                <h4 class="card-title mb-1 text-capitalize">Lista de Usuarios del Sistema</h4>
+                <p class="card-description text-muted mb-0">Gestión y visualización de usuarios registrados en la vulcanizadora</p>
               </div>
-              <div>
+              <div class="d-flex align-items-center gap-3">
+                <span class="badge badge-primary px-3 py-2 mr-3" style="font-size: 0.85rem;">
+                  Total: {{ usuarios|length }}
+                </span>
                 <button type="button" id="btnNuevoUsuario" class="btn btn-primary btn-icon-text shadow-sm">
                   <i class="mdi mdi-plus-circle-outline btn-icon-prepend"></i> Nuevo Usuario
                 </button>
@@ -40,7 +42,7 @@
                       <i class="mdi mdi-magnify"></i>
                     </span>
                   </div>
-                  <input type="text" id="inputBuscarUsuario" class="form-control" placeholder="Buscar usuario por nombre, username o correo...">
+                  <input type="text" id="inputBuscarUsuario" class="form-control" placeholder="Buscar usuario por código, username, nombre o correo...">
                 </div>
               </div>
             </div>
@@ -60,10 +62,10 @@
                 <tbody>
                   {% for usuario in usuarios %}
                     <tr class="fila-usuario">
-                      <td> {{ usuario.id }} </td>
+                      <td> #{{ usuario.id }} </td>
                       <td class="font-weight-bold target-buscar"> {{ usuario.username }} </td>
                       <td class="target-buscar"> {{ usuario.first_name }} {{ usuario.last_name }} </td>
-                      <td class="target-buscar"> {{ usuario.email }} </td>
+                      <td class="target-buscar"> {{ usuario.email|default:'Sin correo' }} </td>
                       <td>
                         {% if usuario.is_active %}
                           <span class="badge badge-success">Activo</span>
@@ -110,7 +112,6 @@
   </div>
   {% include "private/footer.html" %}
 </div>
-<<<<<<< Updated upstream
 
 <script>
   // --- FILTRO DE BÚSQUEDA EN TIEMPO REAL ---
@@ -136,7 +137,6 @@
       }
     });
 
-    // CORREGIDO: Se cambió el comentario de Python por el de JavaScript para que funcione la búsqueda
     if (coincidencias === 0 && filas.length > 0) {
       filaNoResultados.style.display = '';
     } else {
@@ -144,7 +144,7 @@
     }
   });
 
-  // --- DETECTAR Y MOSTRAR MENSAJE DE ÉXITO (AL CREAR O ELIMINAR) ---
+  // --- DETECTAR Y MOSTRAR MENSAJE DE ÉXITO DESDE EL BACKEND ---
   const successDiv = document.getElementById('django-success-message');
   if (successDiv) {
     const mensajeTexto = successDiv.getAttribute('data-message');
@@ -201,105 +201,3 @@
     });
   });
 </script>
-=======
-=======
-{% include 'private/header.html' %}
-<div class="main-panel">
-    <div class="content-wrapper">
-        <div class="row">
-            <div class="col-12 grid-margin stretch-card">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                            <div>
-                                <h4 class="card-title mb-1 text-capitalize">Listado de usuarios</h4>
-                                <p class="text-muted mb-0">Gestion y visualizacion de usuarios registrados</p>
-                            </div>
-                            <a href="" class="btn btn-primary" style="border-radius: 100px;"> Crear usuario    </a>
-
-                            {% if messages %}
-                            {% for message in messages %}
-                            <div class="alert alert-success">
-                                {{ message }}
-                            </div>
-                            {% endfor %}
-                            {% endif %}
-
-                            <span class="badge badge-primary px-3 py-2">
-                                Total: {{ usuarios|length }}
-                            </span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-white border-right-0">
-                                        <i class="mdi mdi-magnify text-muted"></i>
-                                    </span>
-                                </div>
-                                <input
-                                    id="filtroUsuarios"
-                                    type="text"
-                                    class="form-control border-left-0"
-                                    placeholder="Buscar por codigo, nombre o correo"
-                                >
-                            </div>
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped table-bordered mb-0" id="tablaUsuarios">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th class="font-weight-semibold">Codigo</th>
-                                        <th class="font-weight-semibold">Nombre</th>
-                                        <th class="font-weight-semibold">Correo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for usuario in usuarios %}
-                                    <tr>
-                                        <td>#{{ usuario.id }}</td>
-                                        <td>{{ usuario.username }}</td>
-                                        <td>{{ usuario.email|default:'Sin correo' }}</td>
-                                    </tr>
-                                    {% empty %}
-                                    <tr>
-                                        <td colspan="3" class="text-center text-muted py-4">
-                                            No hay usuarios para mostrar.
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var input = document.getElementById('filtroUsuarios');
-            var tabla = document.getElementById('tablaUsuarios');
-
-            if (!input || !tabla) {
-                return;
-            }
-
-            input.addEventListener('keyup', function () {
-                var filtro = input.value.toLowerCase().trim();
-                var filas = tabla.querySelectorAll('tbody tr');
-
-                filas.forEach(function (fila) {
-                    var textoFila = fila.textContent.toLowerCase();
-                    var visible = textoFila.indexOf(filtro) > -1;
-                    fila.style.display = visible ? '' : 'none';
-                });
-            });
-        })();
-    </script>
-
-    {% include 'private/footer.html' %}
->>>>>>> Stashed changes
->>>>>>> Stashed changes
