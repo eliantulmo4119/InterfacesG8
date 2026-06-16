@@ -1,4 +1,5 @@
 
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -19,6 +20,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 # --- Vista del Dashboard ---
 def dashboard(request):
@@ -26,7 +31,9 @@ def dashboard(request):
 
 
 
+
 # --- Vista para Listar Usuarios ---
+
 
 def listar_usuarios(request):
     usuarios = User.objects.all()
@@ -35,6 +42,9 @@ def listar_usuarios(request):
     }
     return render(request, 'private/listar_usuarios.html', contexto)
 
+
+
+# --- Vista para crear un nuevo usuario ---
 
 def crear_usuario(request):
     if request.method == 'POST':
@@ -87,6 +97,7 @@ def eliminar_usuario(request, usuario_id):
     usuario.delete()
     
     messages.success(request, 'El usuario ha sido eliminado correctamente del sistema.')
+
     return redirect('listar_usuarios')
 
 
@@ -124,8 +135,8 @@ User.objects.create_user(
     password="password"
 )
 
-messages.success(request, "usuario creado con exito")
-return render(request, "private/lista_usuarios.html")
-return render(request, "private/")
+if request.method == "POST":
+    # ... crear usuario ...
 
-
+    messages.success(request, "Usuario creado con éxito")
+    return redirect('listar_usuarios')
