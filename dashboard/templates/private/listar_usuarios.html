@@ -74,7 +74,9 @@
                         <a href="#" class="btn btn-sm btn-outline-secondary" title="Editar">
                           <i class="mdi mdi-pencil"></i>
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger" title="Dar de baja">
+                        <a href="{% url 'eliminar_usuario' usuario.id %}" 
+                          class="btn btn-sm btn-outline-danger btn-eliminar" 
+                          title="Eliminar">
                           <i class="mdi mdi-delete"></i>
                         </a>
                       </td>
