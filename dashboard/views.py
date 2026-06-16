@@ -42,3 +42,9 @@ def crear_usuario(request):
             return render(request, 'private/crear_usuarios.html')
             
     return render(request, 'private/crear_usuarios.html')
+def eliminar_usuario(request, usuario_id):
+    usuario = User.objects.get(id=usuario_id)
+    usuario.delete()
+    
+    messages.success(request, 'El usuario ha sido eliminado correctamente del sistema.')
+    return redirect('listar_usuarios')
