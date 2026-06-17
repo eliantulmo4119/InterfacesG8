@@ -1,249 +1,212 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Spica Admin</title>
+  <title>Vulcanizadora Elian - Admin</title>
   
-  {% load static %}
   <link rel="stylesheet" href="{% static 'private/vendors/mdi/css/materialdesignicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'private/vendors/css/vendor.bundle.base.css' %}">
   <link rel="stylesheet" href="{% static 'private/css/style.css' %}">
-  <link class="rounded-circle" rel="shortcut icon" href="{% static 'private/images/favicon.png' %}">
+  
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3187/3187895.png">
+
+  <style>
+    /* Estilos para limpiar y modernizar la barra de navegación superior */
+    .navbar {
+      background: #1e1e2f !important; /* Fondo oscuro estilo fibra de carbono/taller moderno */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+      border-bottom: 3px solid #ffcc00 !important; /* Línea amarilla sutil de estilo automotriz */
+      padding: 10px 20px !important;
+    }
+
+    .navbar .navbar-menu-wrapper {
+      background: transparent !important;
+    }
+
+    /* Asegurar visibilidad total de los textos y logos */
+    .navbar-brand-wrapper strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar h4.font-weight-bold {
+      color: #ffcc00 !important; /* Resalta el propósito del panel */
+      font-size: 1.25rem !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .navbar-toggler {
+      color: #ffffff !important;
+    }
+
+    /* Ajustes del perfil del administrador para que no se deforme ni descuadre */
+    .nav-profile {
+      background: rgba(255, 255, 255, 0.08) !important;
+      padding: 6px 15px !important;
+      border-radius: 30px !important;
+      transition: all 0.3s ease;
+    }
+
+    .nav-profile:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .nav-profile img {
+      width: 38px !important;
+      height: 38px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important; /* Evita que la foto se estire */
+      border: 2px solid #ffcc00 !important;
+    }
+
+    .nav-profile-name {
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      margin-left: 8px !important;
+    }
+
+    /* Sutil rediseño del menú lateral para integrarlo mejor */
+    .sidebar {
+      background: #11111d !important;
+    }
+    
+    .sidebar .nav .nav-item.sidebar-category p {
+      color: #8b8b9f !important;
+    }
+  </style>
 </head>
 <body>
   <div class="container-scroller d-flex">
+    
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item sidebar-category">
-          <p>Navigation</p>
+          <p>Navegación</p>
           <span></span>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard' %}">
+            <i class="mdi mdi-view-dashboard menu-icon"></i>
+            <span class="menu-title">Inicio</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'listar_usuarios' %}">
-            <i class="mdi mdi-view-quilt menu-icon"></i>
-            <span class="menu-title">Usuarios</span>
+            <i class="mdi mdi-account-multiple menu-icon"></i>
+            <span class="menu-title">Personal</span>
             <div class="badge badge-info badge-pill">2</div>
           </a>
         </li>
         <li class="nav-item sidebar-category">
-          <p>Components</p>
+          <p>Operaciones</p>
           <span></span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="mdi mdi-palette menu-icon"></i>
-            <span class="menu-title">UI Elements</span>
+          <a class="nav-link" data-toggle="collapse" href="#servicios-menu" aria-expanded="false" aria-controls="servicios-menu">
+            <i class="mdi mdi-car-connected menu-icon"></i>
+            <span class="menu-title">Servicios de Taller</span>
             <i class="menu-arrow"></i>
           </a>
-          <div class="collapse" id="ui-basic">
+          <div class="collapse" id="servicios-menu">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#ordenes-nueva">Nueva Orden</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#ordenes-lista">Historial Ordenes</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#auxilio-vial">Auxilio Vial / Ruta</a></li>
             </ul>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/forms/basic_elements.html">
-            <i class="mdi mdi-view-headline menu-icon"></i>
-            <span class="menu-title">Form elements</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pages/charts/chartjs.html">
-            <i class="mdi mdi-chart-pie menu-icon"></i>
-            <span class="menu-title">Charts</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pages/tables/basic-table.html">
-            <i class="mdi mdi-grid-large menu-icon"></i>
-            <span class="menu-title">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pages/icons/mdi.html">
-            <i class="mdi mdi-emoticon menu-icon"></i>
-            <span class="menu-title">Icons</span>
-          </a>
-        </li>
-        <li class="nav-item sidebar-category">
-          <p>Pages</p>
-          <span></span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-            <i class="mdi mdi-account menu-icon"></i>
-            <span class="menu-title">User Pages</span>
+          <a class="nav-link" data-toggle="collapse" href="#inventario-menu" aria-expanded="false" aria-controls="inventario-menu">
+            <i class="mdi mdi-wrench menu-icon"></i>
+            <span class="menu-title">Inventario e Insumos</span>
             <i class="menu-arrow"></i>
           </a>
-          <div class="collapse" id="auth">
+          <div class="collapse" id="inventario-menu">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+              <li class="nav-item"> <a class="nav-link" href="#stock-llantas">Stock de Llantas</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#stock-parches">Parches y Pegamentos</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#herramientas">Herramientas / Equipos</a></li>
             </ul>
           </div>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#clientes">
+            <i class="mdi mdi-account-card-details menu-icon"></i>
+            <span class="menu-title">Clientes</span>
+          </a>
+        </li>
         <li class="nav-item sidebar-category">
-          <p>Apps</p>
+          <p>Finanzas y Reportes</p>
           <span></span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="docs/documentation.html">
-            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-            <span class="menu-title">Documentation</span>
+          <a class="nav-link" href="#caja-diaria">
+            <i class="mdi mdi-cash-register menu-icon"></i>
+            <span class="menu-title">Caja y Ventas Diario</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://www.bootstrapdash.com/demo/spica/template/">
-            <button class="btn bg-danger btn-sm menu-title">Upgrade to pro</button>
+          <a class="nav-link" href="#proveedores">
+            <i class="mdi mdi-truck menu-icon"></i>
+            <span class="menu-title">Proveedores</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#reportes-graficos">
+            <i class="mdi mdi-chart-line menu-icon"></i>
+            <span class="menu-title">Reportes Estadísticos</span>
           </a>
         </li>
       </ul>
     </nav>
+    
     <div class="container-fluid page-body-wrapper">
+      
       <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
-        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button>
-          <div class="navbar-brand-wrapper">
-            <a class="navbar-brand brand-logo" href="{% url 'dashboard' %}"><img src="{% static 'private/images/logo.svg' %}" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="{% url 'dashboard' %}"><img src="{% static 'private/images/logo-mini.svg' %}" alt="logo"/></a>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+          
+          <div class="d-flex align-items-center">
+            <button class="navbar-toggler navbar-toggler align-self-center mr-3" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu" style="color: #fff;"></span>
+            </button>
+            
+            <div class="navbar-brand-wrapper d-flex align-items-center">
+              <a class="navbar-brand brand-logo d-flex align-items-center" href="{% url 'dashboard' %}">
+                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="Vulcanizadora Elian" style="width: 35px; height: 35px; margin-right: 12px; filter: brightness(0) invert(1);"/>
+                <strong class="d-none d-sm-inline">Vulcanizadora Elian</strong>
+              </a>
+              <a class="navbar-brand brand-logo-mini" href="{% url 'dashboard' %}">
+                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="logo" style="width: 30px; height: 30px; filter: brightness(0) invert(1);"/>
+              </a>
+            </div>
           </div>
-          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Brandon Haynes</h4>
+          
+          <h4 class="font-weight-bold mb-0 d-none d-md-block text-center">Panel Administrativo de Control</h4>
+          
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item">
-              <h4 class="mb-0 font-weight-bold d-none d-xl-block">Mar 12, 2019 - Apr 10, 2019</h4>
-            </li>
-            <li class="nav-item dropdown mr-1">
-              <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-calendar mx-0"></i>
-                <span class="count bg-info">2</span>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-toggle="dropdown" id="profileDropdown">
+                <img src="{% static 'private/images/faces/face5.jpg' %}" alt="perfil"/>
+                <span class="nav-profile-name">Admin Elian</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                      <img src="{% static 'private/images/faces/face4.jpg' %}" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey</h6>
-                    <p class="font-weight-light small-text text-muted mb-0">The meeting is cancelled</p>
-                  </div>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="#configuraciones">
+                  <i class="mdi mdi-settings text-primary"></i> Configuración
                 </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                      <img src="{% static 'private/images/faces/face2.jpg' %}" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook</h6>
-                    <p class="font-weight-light small-text text-muted mb-0">New product launch</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                      <img src="{% static 'private/images/faces/face3.jpg' %}" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson</h6>
-                    <p class="font-weight-light small-text text-muted mb-0">Upcoming board meeting</p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown mr-2">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-open mx-0"></i>
-                <span class="count bg-danger">1</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-information mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">Just now</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="mdi mdi-settings mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">Private message</p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="mdi mdi-account-box mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0 text-muted">2 days ago</p>
-                  </div>
+                <a class="dropdown-item" href="#logout">
+                  <i class="mdi mdi-logout text-primary"></i> Cerrar Sesión
                 </a>
               </div>
             </li>
           </ul>
+          
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
           </button>
-        </div>
-        <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
-          <ul class="navbar-nav mr-lg-2">
-            <li class="nav-item nav-search d-none d-lg-block">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search Here..." aria-label="search" aria-describedby="search">
-              </div>
-            </li>
-          </ul>
-          <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-profile dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="{% static 'private/images/faces/face5.jpg' %}" alt="profile"/>
-                <span class="nav-profile-name">Eleanor Richardson</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item">
-                  <i class="mdi mdi-settings text-primary"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item">
-                  <i class="mdi mdi-logout text-primary"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link icon-link">
-                <i class="mdi mdi-plus-circle-outline"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link icon-link">
-                <i class="mdi mdi-web"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link icon-link">
-                <i class="mdi mdi-clock-outline"></i>
-              </a>
-            </li>
-          </ul>
         </div>
       </nav>

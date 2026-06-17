@@ -1,7 +1,6 @@
 {% load static %}
 {% include "private/header.html" %}
 
-
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -10,24 +9,24 @@
                 <div class="col-md-12 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <p class="card-title">Website Audience Metrics</p>
-                      <p class="text-muted">25% more traffic than previous week</p>
+                      <p class="card-title">Métricas de Servicios - Vulcanizadora Elian</p>
+                      <p class="text-muted">25% más servicios que la semana anterior</p>
                       <div class="row mb-3">
                         <div class="col-md-7">
                           <div class="d-flex justify-content-between traffic-status">
                             <div class="item">
-                              <p class="mb-">Users</p>
-                              <h5 class="font-weight-bold mb-0">93,956</h5>
+                              <p class="mb-1">Clientes Atendidos</p>
+                              <h5 class="font-weight-bold mb-0">1,245</h5>
                               <div class="color-border"></div>
                             </div>
                             <div class="item">
-                              <p class="mb-">Bounce Rate</p>
-                              <h5 class="font-weight-bold mb-0">58,605</h5>
+                              <p class="mb-1">Llantas Reparadas</p>
+                              <h5 class="font-weight-bold mb-0">3,480</h5>
                               <div class="color-border"></div>
                             </div>
                             <div class="item">
-                              <p class="mb-">Page Views</p>
-                              <h5 class="font-weight-bold mb-0">78,254</h5>
+                              <p class="mb-1">Nuevos Clientes</p>
+                              <h5 class="font-weight-bold mb-0">184</h5>
                               <div class="color-border"></div>
                             </div>
                           </div>
@@ -38,19 +37,19 @@
                             <li class="nav-item">
                               <a class="nav-link active" id="pills-home-tab-custom" data-toggle="pill"
                                 href="#pills-health" role="tab" aria-controls="pills-home" aria-selected="true">
-                                Day
+                                Día
                               </a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" id="pills-profile-tab-custom" data-toggle="pill" href="#pills-career"
                                 role="tab" aria-controls="pills-profile" aria-selected="false">
-                                Week
+                                Semana
                               </a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" id="pills-contact-tab-custom" data-toggle="pill" href="#pills-music"
                                 role="tab" aria-controls="pills-contact" aria-selected="false">
-                                Month
+                                Mes
                               </a>
                             </li>
                           </ul>
@@ -64,12 +63,12 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex align-items-center justify-content-between flex-wrap">
-                        <p class="card-title">Weekly Balance</p>
-                        <p class="text-success font-weight-medium">20.15 %</p>
+                        <p class="card-title">Balance Semanal</p>
+                        <p class="text-success font-weight-medium">+20.15 %</p>
                       </div>
                       <div class="d-flex align-items-center flex-wrap mb-3">
-                        <h5 class="font-weight-normal mb-0 mb-md-1 mb-lg-0 mr-3">$22.736</h5>
-                        <p class="text-muted mb-0">Avg Sessions</p>
+                        <h5 class="font-weight-normal mb-0 mb-md-1 mb-lg-0 mr-3">$2,273.60</h5>
+                        <p class="text-muted mb-0">Promedio Diario</p>
                       </div>
                       <canvas id="balance-chart" height="130"></canvas>
                     </div>
@@ -79,12 +78,12 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex align-items-center justify-content-between flex-wrap">
-                        <p class="card-title">Today Task</p>
-                        <p class="text-success font-weight-medium">45.39 %</p>
+                        <p class="card-title">Tareas de Hoy</p>
+                        <p class="text-success font-weight-medium">45.39 % Completado</p>
                       </div>
                       <div class="d-flex align-items-center flex-wrap mb-3">
-                        <h5 class="font-weight-normal mb-0 mb-md-1 mb-lg-0 mr-3">17.247</h5>
-                        <p class="text-muted mb-0">Avg Sessions</p>
+                        <h5 class="font-weight-normal mb-0 mb-md-1 mb-lg-0 mr-3">17 / 24</h5>
+                        <p class="text-muted mb-0">Órdenes listas</p>
                       </div>
                       <canvas id="task-chart" height="130"></canvas>
                     </div>
@@ -97,8 +96,8 @@
                 <div class="col-md-6 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <p class="card-title">Regional Load</p>
-                      <p class="text-muted">Last update: 2 Hours ago</p>
+                      <p class="card-title">Demanda por Zonas</p>
+                      <p class="text-muted">Última actualización: hace 2 horas</p>
                       <div class="regional-chart-legend d-flex align-items-center flex-wrap mb-1"
                         id="regional-chart-legend"></div>
                       <canvas height="280" id="regional-chart"></canvas>
@@ -109,17 +108,17 @@
                   <div class="card">
                     <div class="card-body pb-0">
                       <div class="d-flex align-items-center mb-4">
-                        <p class="card-title mb-0 mr-1">Today activity</p>
-                        <div class="badge badge-info badge-pill">2</div>
+                        <p class="card-title mb-0 mr-1">Actividad de Hoy</p>
+                        <div class="badge badge-info badge-pill">2 en espera</div>
                       </div>
                       <div class="d-flex flex-wrap pt-2">
                         <div class="mr-4 mb-lg-2 mb-xl-0">
-                          <p>Time On Site</p>
-                          <h4 class="font-weight-bold mb-0">77.15 %</h4>
+                          <p>Tiempo de Espera Promedio</p>
+                          <h4 class="font-weight-bold mb-0">18 min</h4>
                         </div>
                         <div>
-                          <p>Page Views</p>
-                          <h4 class="font-weight-bold mb-0">14.15 %</h4>
+                          <p>Eficiencia Técnico</p>
+                          <h4 class="font-weight-bold mb-0">94.15 %</h4>
                         </div>
                       </div>
                     </div>
@@ -129,30 +128,30 @@
                 <div class="col-md-12 stretch-card">
                   <div class="card">
                     <div class="card-body pb-0">
-                      <p class="card-title">Server Status 247</p>
+                      <p class="card-title">Estado de Maquinarias e Insumos</p>
                       <div class="d-flex justify-content-between flex-wrap">
-                        <p class="text-muted">Last update: 2 Hours ago</p>
+                        <p class="text-muted">Revisión de Inventario y Equipos</p>
                         <div class="d-flex align-items-center flex-wrap server-status-legend mt-3 mb-3 mb-md-0">
                           <div class="item mr-3">
                             <div class="d-flex align-items-center">
                               <div class="color-bullet"></div>
-                              <h5 class="font-weight-bold mb-0">128GB</h5>
+                              <h5 class="font-weight-bold mb-0">85%</h5>
                             </div>
-                            <p class="mb-">Total Usage</p>
+                            <p class="mb-1">Parches y Pegamento</p>
+                          </div>
+                          <div class="item mr-3">
+                            <div class="d-flex align-items-center">
+                              <div class="color-bullet"></div>
+                              <h5 class="font-weight-bold mb-0">Ok</h5>
+                            </div>
+                            <p class="mb-1">Presión Compresor</p>
                           </div>
                           <div class="item mr-3">
                             <div class="d-flex align-items-center">
                               <div class="color-bullet"></div>
                               <h5 class="font-weight-bold mb-0">92%</h5>
                             </div>
-                            <p class="mb-">Memory Usage</p>
-                          </div>
-                          <div class="item mr-3">
-                            <div class="d-flex align-items-center">
-                              <div class="color-bullet"></div>
-                              <h5 class="font-weight-bold mb-0">16%</h5>
-                            </div>
-                            <p class="mb-">Disk Usage</p>
+                            <p class="mb-1">Stock de Llantas</p>
                           </div>
                         </div>
                       </div>
@@ -167,16 +166,16 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Financial management review</h4>
+                  <h4 class="card-title">Historial de Trabajos Recientes</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>User</th>
-                          <th>First name</th>
-                          <th>Progress</th>
-                          <th>Amount</th>
-                          <th>Deadline</th>
+                          <th>Cliente</th>
+                          <th>Nombre Técnico / Mecánico</th>
+                          <th>Progreso de Reparación</th>
+                          <th>Total Cobrado</th>
+                          <th>Fecha</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -184,92 +183,53 @@
                           <td class="py-1">
                             <img src="{% static 'private/images/faces/face1.jpg' %}" alt="image"/>
                           </td>
-                          <td>Herman Beck</td>
+                          <td>Carlos Mendoza</td>
                           <td>
                             <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
-                          <td>$ 77.99</td>
-                          <td>May 15, 2015</td>
+                          <td>$ 15.00</td>
+                          <td>17 de Junio, 2026</td>
                         </tr>
                         <tr>
                           <td class="py-1">
                             <img src="{% static 'private/images/faces/face2.jpg' %}" alt="image"/>
                           </td>
-                          <td>Messsy Adam</td>
+                          <td>Juan Piza</td>
                           <td>
                             <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
-                          <td>$245.30</td>
-                          <td>July 1, 2015</td>
+                          <td>$ 45.30</td>
+                          <td>17 de Junio, 2026</td>
                         </tr>
                         <tr>
                           <td class="py-1">
                             <img src="{% static 'private/images/faces/face3.jpg' %}" alt="image"/>
                           </td>
-                          <td>John Richards</td>
+                          <td>Carlos Mendoza</td>
                           <td>
                             <div class="progress">
                               <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
-                          <td>$138.00</td>
-                          <td>Apr 12, 2015</td>
+                          <td>$ 8.00</td>
+                          <td>16 de Junio, 2026</td>
                         </tr>
                         <tr>
                           <td class="py-1">
                             <img src="{% static 'private/images/faces/face4.jpg' %}" alt="image"/>
                           </td>
-                          <td>Peter Meggik</td>
+                          <td>Luis Alarcón</td>
                           <td>
                             <div class="progress">
                               <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
-                          <td>$ 77.99</td>
-                          <td>May 15, 2015</td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="{% static 'private/images/faces/face5.jpg' %}" alt="image"/>
-                          </td>
-                          <td>Edward</td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>$ 160.25</td>
-                          <td>May 03, 2015</td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="{% static 'private/images/faces/face6.jpg' %}" alt="image"/>
-                          </td>
-                          <td>John Doe</td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>$ 123.21</td>
-                          <td>April 05, 2015</td>
-                        </tr>
-                        <tr>
-                          <td class="py-1">
-                            <img src="{% static 'private/images/faces/face7.jpg' %}" alt="image"/>
-                          </td>
-                          <td>Henry Tom</td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>$ 150.00</td>
-                          <td>June 16, 2015</td>
+                          <td>$ 12.50</td>
+                          <td>16 de Junio, 2026</td>
                         </tr>
                       </tbody>
                     </table>
@@ -285,8 +245,8 @@
                   <div class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
                     <i class="mdi mdi-facebook text-white icon-lg"></i>
                     <div class="ml-3 ml-md-0 ml-xl-3">
-                      <h5 class="text-white font-weight-bold">2.62 Subscribers</h5>
-                      <p class="mt-2 text-white card-text">You main list growing</p>
+                      <h5 class="text-white font-weight-bold">Vulcanizadora Elian</h5>
+                      <p class="mt-2 text-white card-text">Nuestra comunidad crece</p>
                     </div>
                   </div>
                 </div>
@@ -296,10 +256,10 @@
               <div class="card bg-google d-flex align-items-center">
                 <div class="card-body py-5">
                   <div class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
-                    <i class="mdi mdi-google-plus text-white icon-lg"></i>
+                    <i class="mdi mdi-google-maps text-white icon-lg"></i>
                     <div class="ml-3 ml-md-0 ml-xl-3">
-                      <h5 class="text-white font-weight-bold">3.4k Followers</h5>
-                      <p class="mt-2 text-white card-text">You main list growing</p>
+                      <h5 class="text-white font-weight-bold">Perfil de Google</h5>
+                      <p class="mt-2 text-white card-text">Revisiones y Ubicación</p>
                     </div>
                   </div>
                 </div>
@@ -309,15 +269,15 @@
               <div class="card bg-twitter d-flex align-items-center">
                 <div class="card-body py-5">
                   <div class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
-                    <i class="mdi mdi-twitter text-white icon-lg"></i>
+                    <i class="mdi mdi-whatsapp text-white icon-lg"></i>
                     <div class="ml-3 ml-md-0 ml-xl-3">
-                      <h5 class="text-white font-weight-bold">3k followers</h5>
-                      <p class="mt-2 text-white card-text">You main list growing</p>
+                      <h5 class="text-white font-weight-bold">Atención Digital</h5>
+                      <p class="mt-2 text-white card-text">Pedidos de auxilio vial</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-        {% include "private/footer.html" %}
+        </div>
+{% include "private/footer.html" %}

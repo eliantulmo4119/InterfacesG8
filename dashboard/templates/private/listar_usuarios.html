@@ -1,5 +1,4 @@
 {% load static %}
-<<<<<<< Updated upstream
 {% include "private/header.html" %}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -31,7 +30,7 @@
                 </button>
               </div>
             </div>
-
+            
             <div class="row mb-4">
               <div class="col-md-6 col-sm-12">
                 <div class="input-group">
@@ -40,7 +39,10 @@
                       <i class="mdi mdi-magnify"></i>
                     </span>
                   </div>
-                  <input type="text" id="inputBuscarUsuario" class="form-control" placeholder="Buscar usuario por nombre, username o correo...">
+                  <input type="text"
+                         id="inputBuscarUsuario"
+                         class="form-control"
+                         placeholder="Buscar por ID, username, nombre o correo...">
                 </div>
               </div>
             </div>
@@ -60,10 +62,10 @@
                 <tbody>
                   {% for usuario in usuarios %}
                     <tr class="fila-usuario">
-                      <td> {{ usuario.id }} </td>
+                      <td class="target-buscar"> {{ usuario.id }} </td>
                       <td class="font-weight-bold target-buscar"> {{ usuario.username }} </td>
                       <td class="target-buscar"> {{ usuario.first_name }} {{ usuario.last_name }} </td>
-                      <td class="target-buscar"> {{ usuario.email }} </td>
+                      <td class="target-buscar"> {{ usuario.email|default:'Sin correo' }} </td>
                       <td>
                         {% if usuario.is_active %}
                           <span class="badge badge-success">Activo</span>
@@ -81,23 +83,23 @@
                           title="Eliminar">
                         <button type="button" 
                                 class="btn btn-sm btn-outline-danger btn-eliminar-usuario" 
-                                data-id="{{ usuario.id }}" 
+                                data-id="{{ usuario.id }}"
                                 data-username="{{ usuario.username }}" 
-                                title="Eliminar permanentemente">
+                                title="Dar de baja">
                           <i class="mdi mdi-delete"></i>
                         </button>
                       </td>
                     </tr>
                   {% empty %}
-                    <tr id="filaVaciaOriginal">
+                    <tr>
                       <td colspan="6" class="text-center text-muted py-4">
                         <i class="mdi mdi-account-off size-md d-block mb-2"></i>
                         No hay usuarios registrados en el sistema.
                       </td>
                     </tr>
                   {% endfor %}
-                  
-                  <tr id="filaNoResultados" style="display: none;">
+
+                  <tr id="filaNoResultados" style="display:none;">
                     <td colspan="6" class="text-center text-muted py-4">
                       <i class="mdi mdi-magnify-close size-md d-block mb-2"></i>
                       No se encontraron usuarios que coincidan con la búsqueda.
@@ -111,199 +113,102 @@
         </div>
       </div>
     </div>
+      {% include "private/footer.html" %}
   </div>
-  {% include "private/footer.html" %}
 </div>
-<<<<<<< Updated upstream
 
 <script>
-  // --- FILTRO DE BÚSQUEDA EN TIEMPO REAL ---
-  document.getElementById('inputBuscarUsuario').addEventListener('keyup', function() {
-    const terminoBusqueda = this.value.toLowerCase().trim();
-    const filas = document.querySelectorAll('.fila-usuario');
-    const filaNoResultados = document.getElementById('filaNoResultados');
-    let coincidencias = 0;
+document.addEventListener('DOMContentLoaded', function() {
 
-    filas.forEach(fila => {
-      const celdasObjetivo = fila.querySelectorAll('.target-buscar');
-      let textoFila = '';
-      
-      celdasObjetivo.forEach(celda => {
-        textoFila += celda.textContent.toLowerCase() + ' ';
+  // 1. Redirección al Formulario de Nuevo Usuario
+  const btnNuevo = document.getElementById('btnNuevoUsuario');
+  if(btnNuevo) {
+    btnNuevo.addEventListener('click', function() {
+      Swal.fire({
+        title: '¿Registrar nuevo usuario?',
+        text: "Será redirigido al formulario de alta de personal.",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, ir al formulario',
+        cancelButtonText: 'Cancelar',
+        background: '#ffffff',
+        customClass: {
+          popup: 'animated fadeInDown'
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "{% url 'crear_usuario' %}";
+        }
       });
-
-      if (textoFila.includes(terminoBusqueda)) {
-        fila.style.display = '';
-        coincidencias++;
-      } else {
-        fila.style.display = 'none';
-      }
-    });
-
-    // CORREGIDO: Se cambió el comentario de Python por el de JavaScript para que funcione la búsqueda
-    if (coincidencias === 0 && filas.length > 0) {
-      filaNoResultados.style.display = '';
-    } else {
-      filaNoResultados.style.display = 'none';
-    }
-  });
-
-  // --- DETECTAR Y MOSTRAR MENSAJE DE ÉXITO (AL CREAR O ELIMINAR) ---
-  const successDiv = document.getElementById('django-success-message');
-  if (successDiv) {
-    const mensajeTexto = successDiv.getAttribute('data-message');
-    
-    Swal.fire({
-      title: '¡Operación Exitosa!',
-      text: mensajeTexto,
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      timer: 3500,
-      timerProgressBar: true
     });
   }
 
-  // --- CONTROL DEL BOTÓN NUEVO USUARIO ---
-  document.getElementById('btnNuevoUsuario').addEventListener('click', function() {
-    Swal.fire({
-      title: '¿Registrar nuevo usuario?',
-      text: "Será redirigido al formulario de alta de personal.",
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6', 
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, ir al formulario',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "{% url 'crear_usuario' %}";
+  // 2. Buscador en Tiempo Real
+  const inputBuscar = document.getElementById("inputBuscarUsuario");
+  const filas = document.querySelectorAll(".fila-usuario");
+  const filaNoResultados = document.getElementById("filaNoResultados");
+
+  if (inputBuscar) {
+    inputBuscar.addEventListener("keyup", function () {
+      const termino = this.value.toLowerCase().trim();
+      let coincidencias = 0;
+
+      filas.forEach(fila => {
+        const textoFila = Array.from(fila.querySelectorAll(".target-buscar"))
+          .map(td => td.textContent.toLowerCase())
+          .join(" ");
+
+        if (textoFila.includes(termino)) {
+          fila.style.display = "";
+          coincidencias++;
+        } else {
+          fila.style.display = "none";
+        }
+      });
+
+      if (filaNoResultados) {
+        filaNoResultados.style.display = (coincidencias === 0 && termino !== "") ? "" : "none";
       }
     });
-  });
+  }
 
-  // --- INTERACCIÓN DE ALERTA AL ELIMINAR UN USUARIO ---
-  document.querySelectorAll('.btn-eliminar-usuario').forEach(boton => {
-    boton.addEventListener('click', function() {
-      const usuarioId = this.getAttribute('data-id');
-      const username = this.getAttribute('data-username');
+  // 3. Alerta de Éxito Global desde Django Messages
+  const successDiv = document.getElementById("django-success-message");
+  if (successDiv) {
+    Swal.fire({
+      icon: "success",
+      title: "¡Hecho!",
+      text: successDiv.getAttribute("data-message"),
+      confirmButtonColor: "#3085d6"
+    });
+  }
 
+  // 4. Modal de Confirmación de Eliminación con Redirección Dinámica de Django
+  document.querySelectorAll(".btn-eliminar-usuario").forEach(boton => {
+    boton.addEventListener("click", function () {
+      const username = this.dataset.username;
+      const usuarioId = this.dataset.id;
+      
       Swal.fire({
         title: `¿Eliminar a ${username}?`,
-        text: "Esta acción es irreversible y removerá la cuenta completamente del sistema.",
-        icon: 'warning',
+        text: "Esta acción no se puede deshacer.",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#6c757d',
-        confirmButtonText: 'Sí, eliminar de raíz',
-        cancelButtonText: 'Cancelar'
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar"
       }).then((result) => {
         if (result.isConfirmed) {
-          let urlBase = "{% url 'eliminar_usuario' 0 %}";
-          window.location.href = urlBase.replace('0', usuarioId);
+          // Resolvemos la ruta exacta de Django usando un comodín '0' y lo reemplazamos con el ID real
+          let urlEliminar = "{% url 'eliminar_usuario' 0 %}".replace('0', usuarioId);
+          window.location.href = urlEliminar;
         }
       });
     });
   });
+
+});
 </script>
-=======
-=======
-{% include 'private/header.html' %}
-<div class="main-panel">
-    <div class="content-wrapper">
-        <div class="row">
-            <div class="col-12 grid-margin stretch-card">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                            <div>
-                                <h4 class="card-title mb-1 text-capitalize">Listado de usuarios</h4>
-                                <p class="text-muted mb-0">Gestion y visualizacion de usuarios registrados</p>
-                            </div>
-                            <a href="" class="btn btn-primary" style="border-radius: 100px;"> Crear usuario    </a>
-
-                            {% if messages %}
-                            {% for message in messages %}
-                            <div class="alert alert-success">
-                                {{ message }}
-                            </div>
-                            {% endfor %}
-                            {% endif %}
-
-                            <span class="badge badge-primary px-3 py-2">
-                                Total: {{ usuarios|length }}
-                            </span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-white border-right-0">
-                                        <i class="mdi mdi-magnify text-muted"></i>
-                                    </span>
-                                </div>
-                                <input
-                                    id="filtroUsuarios"
-                                    type="text"
-                                    class="form-control border-left-0"
-                                    placeholder="Buscar por codigo, nombre o correo"
-                                >
-                            </div>
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped table-bordered mb-0" id="tablaUsuarios">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th class="font-weight-semibold">Codigo</th>
-                                        <th class="font-weight-semibold">Nombre</th>
-                                        <th class="font-weight-semibold">Correo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for usuario in usuarios %}
-                                    <tr>
-                                        <td>#{{ usuario.id }}</td>
-                                        <td>{{ usuario.username }}</td>
-                                        <td>{{ usuario.email|default:'Sin correo' }}</td>
-                                    </tr>
-                                    {% empty %}
-                                    <tr>
-                                        <td colspan="3" class="text-center text-muted py-4">
-                                            No hay usuarios para mostrar.
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function () {
-            var input = document.getElementById('filtroUsuarios');
-            var tabla = document.getElementById('tablaUsuarios');
-
-            if (!input || !tabla) {
-                return;
-            }
-
-            input.addEventListener('keyup', function () {
-                var filtro = input.value.toLowerCase().trim();
-                var filas = tabla.querySelectorAll('tbody tr');
-
-                filas.forEach(function (fila) {
-                    var textoFila = fila.textContent.toLowerCase();
-                    var visible = textoFila.indexOf(filtro) > -1;
-                    fila.style.display = visible ? '' : 'none';
-                });
-            });
-        })();
-    </script>
-
-    {% include 'private/footer.html' %}
->>>>>>> Stashed changes
->>>>>>> Stashed changes
