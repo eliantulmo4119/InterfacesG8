@@ -22,7 +22,7 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div>
                 <h4 class="card-title mb-1">Lista de Usuarios del Sistema</h4>
-                <p class="card-description text-muted mb-0">Personal administrativo y operativo de la vulcanizadora</p>
+                <p class="card-description text-muted mb-0">Personal administrative y operativo de la vulcanizadora</p>
               </div>
               <div>
                 <button type="button" id="btnNuevoUsuario" class="btn btn-primary btn-icon-text shadow-sm">
@@ -74,7 +74,7 @@
                         {% endif %}
                       </td>
                       <td class="text-center">
-                        <a href="#" class="btn btn-sm btn-outline-secondary" title="Editar">
+                        <a href="#" class="btn btn-sm btn-outline-secondary rounded-circle m-1" title="Editar">
                           <i class="mdi mdi-pencil"></i>
                         </a>
 
@@ -82,7 +82,7 @@
                           class="btn btn-sm btn-outline-danger btn-eliminar" 
                           title="Eliminar">
                         <button type="button" 
-                                class="btn btn-sm btn-outline-danger btn-eliminar-usuario" 
+                                class="btn btn-sm btn-outline-danger btn-eliminar-usuario rounded-circle m-1" 
                                 data-id="{{ usuario.id }}"
                                 data-username="{{ usuario.username }}" 
                                 title="Dar de baja">
