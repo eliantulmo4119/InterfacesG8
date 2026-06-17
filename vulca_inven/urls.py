@@ -5,5 +5,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('', include('vulca.urls')), 
+    path('productos/', include('productos.urls')),
 ]
 # hola
