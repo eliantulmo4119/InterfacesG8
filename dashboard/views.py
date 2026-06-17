@@ -77,11 +77,11 @@ def editar_usuario(request, id): #Metodo de editar
         #ACUTALIZAR DATOS
         usuario.username = username
         usuario.email = email
-        usuario.password = password
-
+        usuario.set_password(password) 
         usuario.save()
         messages.success(request, "El registro se actualizó con éxito")
         return redirect("listar_usuarios")
     contexto = {
         "usuario":usuario
     }
+    return render(request, "private/editar_usuario.html", contexto)
