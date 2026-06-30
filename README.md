@@ -1,1 +1,1 @@
-Configurar conexión a la base de datos
+Implementar registro de clientes
