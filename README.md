@@ -1,1 +1,1 @@
-14. refactor: reorganizar la estructura de controladores
+docs: agregar documentación del proyecto en README
