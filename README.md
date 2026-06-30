@@ -1,1 +1,1 @@
- integrar mapa de ubicación
+ mejorar estilos del encabezado
