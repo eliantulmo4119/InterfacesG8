@@ -1,1 +1,1 @@
- implementar mapa de ubicación
+crear página sobre nosotros
