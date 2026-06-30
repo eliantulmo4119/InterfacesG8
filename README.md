@@ -1,1 +1,1 @@
- agregar sección de promociones
+añadir testimonios de clientes
