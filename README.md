@@ -1,1 +1,1 @@
- implementar búsqueda de clientes por nombre y placa
+implementar autenticación de usuarios
