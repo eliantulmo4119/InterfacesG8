@@ -1,1 +1,1 @@
- mejorar estilos del encabezado
+optimizar tipografía del sitio
