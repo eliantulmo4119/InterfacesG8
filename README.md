@@ -1,1 +1,1 @@
- implementar cierre de caja diario
+ generar reporte de servicios realizados
