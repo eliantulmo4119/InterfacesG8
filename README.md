@@ -1,1 +1,1 @@
- eliminar código duplicado
+agregar instrucciones de instalación
