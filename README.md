@@ -1,1 +1,1 @@
- registrar cambio de neumáticos
+implementar módulo de promociones
