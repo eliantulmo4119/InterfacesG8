@@ -1,1 +1,1 @@
-Agregar paginación en clientes
+Agregar permisos para administrador
