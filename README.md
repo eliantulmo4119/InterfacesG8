@@ -1,1 +1,1 @@
-Initial project setup
+Configurar conexión a la base de datos
