@@ -1,1 +1,1 @@
- agregar pruebas básicas de componentes
+ agregar sección de marcas de llantas disponibles
