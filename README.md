@@ -1,1 +1,1 @@
- optimizar código CSS
+ eliminar código duplicado
