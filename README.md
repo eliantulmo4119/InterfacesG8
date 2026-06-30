@@ -1,1 +1,1 @@
-actualizar instrucciones de instalación
+ actualizar dependencias del proyecto
