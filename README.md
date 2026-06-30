@@ -1,1 +1,1 @@
- implementar menú de navegación
+agregar catálogo de llantas
