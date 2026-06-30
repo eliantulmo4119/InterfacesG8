@@ -1,1 +1,1 @@
- mejorar diseño del encabezado
+ solucionar enlaces rotos
