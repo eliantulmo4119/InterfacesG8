@@ -1,1 +1,1 @@
-optimizar reutilización de estilos
+optimizar rendimiento del sitio
