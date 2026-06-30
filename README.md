@@ -1,1 +1,1 @@
-Agregar gráficos de ventas
+Actualizar documentación del proyecto
