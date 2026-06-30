@@ -1,1 +1,1 @@
-Implementar registro de clientes
+Validar credenciales de usuario
