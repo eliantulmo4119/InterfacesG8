@@ -1,1 +1,1 @@
-añadir testimonios de clientes
+reorganizar componentes de la interfaz
