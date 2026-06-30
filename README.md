@@ -1,1 +1,1 @@
-agregar catálogo de llantas
+ implementar mapa de ubicación
