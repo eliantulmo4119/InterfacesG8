@@ -1,1 +1,1 @@
-agregar instrucciones de instalación
+ actualizar README
