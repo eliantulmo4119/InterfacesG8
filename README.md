@@ -1,1 +1,1 @@
-Registrar asistencia de empleados
+Corregir errores de autenticación
