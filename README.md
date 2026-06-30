@@ -1,1 +1,1 @@
-agregar control de asistencia del personal
+ enviar notificaciones de citas programadas
