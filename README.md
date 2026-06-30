@@ -1,1 +1,1 @@
-validar navegación entre páginas
+ verificar compatibilidad móvil
