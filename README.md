@@ -1,1 +1,1 @@
-implementar autenticación de usuarios
+ corregir validación del formulario de clientes
