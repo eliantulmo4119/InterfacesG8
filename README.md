@@ -1,1 +1,1 @@
-Actualizar documentación del proyecto
+Realizar limpieza y refactorización del código
