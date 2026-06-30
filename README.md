@@ -1,1 +1,1 @@
-Agregar búsqueda de clientes
+Crear módulo de inventario
