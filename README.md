@@ -1,1 +1,1 @@
- actualizar README
+ optimizar carga de recursos
