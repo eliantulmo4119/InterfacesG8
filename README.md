@@ -1,1 +1,1 @@
- mejorar rendimiento del sitio
+ minimizar archivos CSS y JS
