@@ -1,1 +1,1 @@
- agregar pruebas para el módulo de clientes
+ corregir errores menores reportados durante las pruebas finales
