@@ -1,1 +1,1 @@
-Agregar permisos para administrador
+Registrar asistencia de empleados
