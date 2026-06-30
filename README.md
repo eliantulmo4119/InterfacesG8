@@ -1,1 +1,1 @@
-agregar sección de promociones
+Initial project setup
