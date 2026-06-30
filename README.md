@@ -1,1 +1,1 @@
- enviar notificaciones de citas programadas
+agregar módulo de caja diaria
