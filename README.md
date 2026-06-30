@@ -1,1 +1,1 @@
-reorganizar componentes de la interfaz
+optimizar reutilización de estilos
