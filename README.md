@@ -1,1 +1,1 @@
- añadir horario de atención
+corregir validación de campos obligatorios
