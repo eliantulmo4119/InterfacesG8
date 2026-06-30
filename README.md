@@ -1,1 +1,1 @@
-Realizar limpieza y refactorización del código
+Realizar limpieza del inventario
