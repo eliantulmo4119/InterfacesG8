@@ -1,1 +1,1 @@
- agregar iconos de redes sociales
+ agregar pruebas básicas de componentes
