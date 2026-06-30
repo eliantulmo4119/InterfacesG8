@@ -1,1 +1,1 @@
-corregir enlaces del menú
+ corregir visualización en dispositivos móviles
