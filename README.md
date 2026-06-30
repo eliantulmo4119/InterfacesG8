@@ -1,1 +1,1 @@
-Implementar exportación a PDF
+Agregar gráficos de ventas
