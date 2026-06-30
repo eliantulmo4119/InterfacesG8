@@ -1,1 +1,1 @@
-Realizar limpieza del inventario
+crear estructura inicial del proyecto
