@@ -1,1 +1,1 @@
-agregar módulo de gestión de servicios de vulcanización
+ implementar registro de ventas y facturación
