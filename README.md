@@ -1,1 +1,1 @@
- corregir visualización en dispositivos móviles
+ agregar sección de promociones
