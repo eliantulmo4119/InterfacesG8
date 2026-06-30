@@ -1,1 +1,1 @@
-fix: corregir error al eliminar órdenes
+2. feat: agregar página de inicio con información del negocio
