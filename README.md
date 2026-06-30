@@ -1,1 +1,1 @@
-mejorar diseño responsivo
+ optimizar tipografías
