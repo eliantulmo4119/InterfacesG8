@@ -87,3 +87,20 @@ def editar_usuario(request, id): #Metodo de editar
         "usuario":usuario
     }
     return render(request, "private/editar_usuario.html", contexto)
+
+
+# ---------------- REPORTES ESTADÍSTICOS ----------------
+def reporte_estadisticos(request):
+    # Datos simulados de control para el taller
+    meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun']
+    ventas = [1200, 1500, 1800, 1400, 2100, 2500] 
+    servicios_mas_solicitados = ['Parches', 'Alineación', 'Cambio de Llanta', 'Auxilio Vial']
+    cantidades = [45, 20, 35, 15]
+
+    contexto = {
+        'meses': meses,
+        'ventas': ventas,
+        'servicios_mas_solicitados': servicios_mas_solicitados,
+        'cantidades': cantidades,
+    }
+    return render(request, 'private/reportes.html', contexto)

@@ -1,0 +1,72 @@
+{% load static %}
+{% include "private/header.html" %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="main-panel" style="background: #1a1a24; min-height: 100vh;">
+  <div class="content-wrapper">
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card bg-dark border-secondary text-white">
+          <div class="card-body">
+
+            <h4 class="card-title text-warning font-weight-bold"><i class="mdi mdi-package-variant-closed mr-2"></i>Crear Producto</h4>
+            <hr class="border-secondary">
+
+            <form method="POST" id="formProducto">
+              {% csrf_token %}
+
+              <input type="text" class="form-control bg-secondary text-white border-0 mb-2" name="codigo_barras" placeholder="Código de Barras">
+
+              <input type="text" class="form-control bg-secondary text-white border-0 mb-2" name="nombre" placeholder="Nombre del Producto" required>
+
+              <textarea class="form-control bg-secondary text-white border-0 mb-2" name="descripcion" placeholder="Descripción / Detalles" rows="2"></textarea>
+
+              <input type="number" step="0.01" class="form-control bg-secondary text-white border-0 mb-2" name="precio_compra" placeholder="Precio de Compra (Ej: 10.50)" required>
+
+              <input type="number" step="0.01" class="form-control bg-secondary text-white border-0 mb-2" name="precio_venta" placeholder="Precio de Venta (Ej: 15.00)" required>
+
+              <input type="number" class="form-control bg-secondary text-white border-0 mb-2" name="stock" placeholder="Stock Inicial" required>
+
+              <input type="number" class="form-control bg-secondary text-white border-0 mb-3" name="stock_minimo" placeholder="Stock Mínimo (Alerta)" default="5" required>
+
+              <select class="form-control bg-secondary text-white border-0 mb-3" name="id_proveedor">
+                <option value="">Seleccione Proveedor</option>
+                {% for p in proveedores %}
+                  <option value="{{ p.id_provider }}">{{ p.nombre_empresa }}</option>
+                {% endfor %}
+              </select>
+
+              <button type="submit" class="btn btn-success">Guardar</button>
+              <a href="{% url 'listar_productos' %}" class="btn btn-danger">Cancelar</a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include "private/footer.html" %}
+</div>
+
+<script>
+document.getElementById("formProducto").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  Swal.fire({
+    title: "¿Guardar producto?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Sí",
+  }).then((r)=>{
+    if(r.isConfirmed){
+      this.submit();
+    }
+  });
+});
+</script>

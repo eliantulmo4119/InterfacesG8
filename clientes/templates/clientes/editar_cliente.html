@@ -1,0 +1,65 @@
+{% load static %}
+{% include "private/header.html" %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="main-panel">
+  <div class="content-wrapper">
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+
+            <h4 class="card-title">Modificar Cliente</h4>
+            <p class="card-description text-muted">Actualizando datos de: {{ cliente.nombre }}</p>
+            <hr>
+
+            <form method="POST" id="formEditarCliente">
+              {% csrf_token %}
+
+              <input type="text" class="form-control mb-2" name="cedula_ruc" value="{{ cliente.cedula_ruc }}" placeholder="Cédula o RUC" required>
+
+              <input type="text" class="form-control mb-2" name="nombre" value="{{ cliente.nombre }}" placeholder="Nombre Completo" required>
+
+              <input type="text" class="form-control mb-2" name="telefono" value="{{ cliente.telefono|default:'' }}" placeholder="Teléfono">
+
+              <input type="email" class="form-control mb-2" name="email" value="{{ cliente.email|default:'' }}" placeholder="Correo Electrónico">
+
+              <textarea class="form-control mb-3" name="direccion" placeholder="Dirección domiciliaria" rows="3">{{ cliente.direccion|default:'' }}</textarea>
+
+              <button type="submit" class="btn btn-info">Actualizar</button>
+              <a href="{% url 'listar_clientes' %}" class="btn btn-danger">Cancelar</a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include "private/footer.html" %}
+</div>
+
+<script>
+document.getElementById("formEditarCliente").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  Swal.fire({
+    title: "¿Actualizar datos del cliente?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí, modificar",
+    cancelButtonText: "No",
+    confirmButtonColor: "#46c35f",
+    cancelButtonColor: "#f96868"
+  }).then((r)=>{
+    if(r.isConfirmed){
+      this.submit();
+    }
+  });
+});
+</script>

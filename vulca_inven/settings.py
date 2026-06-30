@@ -33,9 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'vulca',
     'dashboard',
-    'productos'
+    'productos',
+    'proveedores.apps.ProveedoresConfig',
+    'clientes',
 ]
 
 MIDDLEWARE = [

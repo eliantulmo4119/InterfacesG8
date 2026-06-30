@@ -1,12 +1,14 @@
 from django.db import models
-
-# Create your models here.
+from proveedores.models import Proveedor
 
 class Producto(models.Model):
-    nombre_producto = models.CharField(max_length = 100)
-    precio_producto = models.DecimalField(max_digits = 10, decimal_places = 2)
-    stock_producto = models.IntegerField()
-    estado_producto = models.CharField(max_length = 20)
-    
+    nombre = models.CharField(max_length=150)
+    descripcion = models.TextField(blank=True, null=True)
+    precio_compra = models.DecimalField(max_digits=10, decimal_places=2)
+    precio_venta = models.DecimalField(max_digits=10, decimal_places=2)
+    stock = models.IntegerField()
+    stock_minimo = models.IntegerField(default=5)
+    proveedor = models.ForeignKey(Proveedor, on_delete=models.SET_NULL, null=True, blank=True)
+
     def __str__(self):
-        return self.nombre_producto
+        return self.nombre

@@ -6,19 +6,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Vulcanizadora Elian - Admin</title>
-  
+
   <link rel="stylesheet" href="{% static 'private/vendors/mdi/css/materialdesignicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'private/vendors/css/vendor.bundle.base.css' %}">
   <link rel="stylesheet" href="{% static 'private/css/style.css' %}">
-  
+
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3187/3187895.png">
 
   <style>
     /* Estilos para limpiar y modernizar la barra de navegación superior */
     .navbar {
-      background: #1e1e2f !important; /* Fondo oscuro estilo fibra de carbono/taller moderno */
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-      border-bottom: 3px solid #ffcc00 !important; /* Línea amarilla sutil de estilo automotriz */
+      background: #1e1e2f !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+      border-bottom: 3px solid #ffcc00 !important;
       padding: 10px 20px !important;
     }
 
@@ -34,7 +34,7 @@
     }
 
     .navbar h4.font-weight-bold {
-      color: #ffcc00 !important; /* Resalta el propósito del panel */
+      color: #ffcc00 !important;
       font-size: 1.25rem !important;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -44,7 +44,7 @@
       color: #ffffff !important;
     }
 
-    /* Ajustes del perfil del administrador para que no se deforme ni descuadre */
+    /* Ajustes del perfil del administrador */
     .nav-profile {
       background: rgba(255, 255, 255, 0.08) !important;
       padding: 6px 15px !important;
@@ -60,7 +60,7 @@
       width: 38px !important;
       height: 38px !important;
       border-radius: 50% !important;
-      object-fit: cover !important; /* Evita que la foto se estire */
+      object-fit: cover !important;
       border: 2px solid #ffcc00 !important;
     }
 
@@ -70,19 +70,21 @@
       margin-left: 8px !important;
     }
 
-    /* Sutil rediseño del menú lateral para integrarlo mejor */
+    /* Sutil rediseño del menú lateral */
     .sidebar {
       background: #11111d !important;
     }
-    
+
     .sidebar .nav .nav-item.sidebar-category p {
       color: #8b8b9f !important;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
   <div class="container-scroller d-flex">
-    
+
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item sidebar-category">
@@ -121,7 +123,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'listar_clientes' %}">
+          <a class="nav-link" href="#clientes">
             <i class="mdi mdi-account-card-details menu-icon"></i>
             <span class="menu-title">Clientes</span>
           </a>
@@ -142,7 +144,6 @@
             <span class="menu-title">Productos</span>
           </a>
         </li>
-<!-- Busca esto en tu menú lateral original y cámbialo así: -->
         <li class="nav-item">
           <a class="nav-link" href="{% url 'reportes_graficos' %}">
             <i class="mdi mdi-chart-line menu-icon"></i>
@@ -151,34 +152,34 @@
         </li>
       </ul>
     </nav>
-    
+
     <div class="container-fluid page-body-wrapper">
-      
+
       <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
-          
+
           <div class="d-flex align-items-center">
             <button class="navbar-toggler navbar-toggler align-self-center mr-3" type="button" data-toggle="minimize">
               <span class="mdi mdi-menu" style="color: #fff;"></span>
             </button>
-            
+
             <div class="navbar-brand-wrapper d-flex align-items-center">
               <a class="navbar-brand brand-logo d-flex align-items-center" href="{% url 'dashboard' %}">
-                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="Vulcanizadora Elian" style="width: 35px; height: 35px; margin-right: 12px; filter: brightness(0) invert(1);"/>
+                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="Vulcanizadora Elian" style="width: 35px; height: 35px; margin-right: 12px; filter: brightness(0) invert(1);" />
                 <strong class="d-none d-sm-inline">Vulcanizadora Elian</strong>
               </a>
               <a class="navbar-brand brand-logo-mini" href="{% url 'dashboard' %}">
-                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="logo" style="width: 30px; height: 30px; filter: brightness(0) invert(1);"/>
+                <img src="https://cdn-icons-png.flaticon.com/512/2933/2933831.png" alt="logo" style="width: 30px; height: 30px; filter: brightness(0) invert(1);" />
               </a>
             </div>
           </div>
-          
+
           <h4 class="font-weight-bold mb-0 d-none d-md-block text-center">Panel Administrativo de Control</h4>
-          
+
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="{% static 'private/images/faces/face5.jpg' %}" alt="perfil"/>
+                <img src="{% static 'private/images/faces/face5.jpg' %}" alt="perfil" />
                 <span class="nav-profile-name">Admin Elian</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -191,9 +192,130 @@
               </div>
             </li>
           </ul>
-          
+
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
           </button>
         </div>
       </nav>
+
+      <div class="main-panel" style="background: #1a1a24; color: #fff; padding: 30px; min-height: 100vh;">
+        <div class="content-wrapper">
+
+          <div class="row mb-4">
+            <div class="col-12">
+              <h3 class="text-warning font-weight-bold"><i class="mdi mdi-chart-line mr-2"></i>REPORTES ESTADÍSTICOS Y RENDIMIENTO</h3>
+              <p class="text-muted">Visualización en tiempo real del flujo de la vulcanizadora.</p>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+              <div class="card bg-dark border-secondary text-white p-3">
+                <h5>Ventas del Mes</h5>
+                <h2 class="text-success">$1,500.00</h2>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card bg-dark border-secondary text-white p-3">
+                <h5>Servicios Totales</h5>
+                <h2 class="text-info">100</h2>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card bg-dark border-secondary text-white p-3">
+                <h5>Auxilios en Ruta</h5>
+                <h2 class="text-danger">10</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-7 mb-4">
+              <div class="card bg-dark border-secondary text-white p-3">
+                <h4 class="mb-3 text-warning">Tendencia de Ventas (Últimos 6 meses)</h4>
+                <div style="position: relative; width:100%; height:250px;">
+                  <canvas id="graficoVentas"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 mb-4">
+              <div class="card bg-dark border-secondary text-white p-3">
+                <h4 class="mb-3 text-warning">Servicios Más Solicitados</h4>
+                <div style="position: relative; width:100%; height:250px;">
+                  <canvas id="graficoServicios"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+  </div>
+
+  <script>
+    // Convertimos de forma segura las variables del contexto a arreglos válidos de JavaScript
+    const dataMeses = JSON.parse('{{ meses|safe }}'.replace(/'/g, '"'));
+    const dataVentas = JSON.parse('{{ ventas|safe }}');
+    const dataServicios = JSON.parse('{{ servicios_mas_solicitados|safe }}'.replace(/'/g, '"'));
+    const dataCantidades = JSON.parse('{{ cantidades|safe }}');
+
+    // Configuración del Gráfico de Ventas (Líneas)
+    const ctxVentas = document.getElementById('graficoVentas').getContext('2d');
+    new Chart(ctxVentas, {
+      type: 'line',
+      data: {
+        labels: dataMeses,
+        datasets: [{
+          label: 'Ingresos ($)',
+          data: dataVentas,
+          borderColor: '#ffcc00',
+          backgroundColor: 'rgba(255, 204, 0, 0.1)',
+          borderWidth: 3,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: { color: '#ffffff' }
+          }
+        },
+        scales: {
+          x: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+          y: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+        }
+      }
+    });
+
+    // Configuración del Gráfico de Servicios (Dona)
+    const ctxServicios = document.getElementById('graficoServicios').getContext('2d');
+    new Chart(ctxServicios, {
+      type: 'doughnut',
+      data: {
+        labels: dataServicios,
+        datasets: [{
+          data: dataCantidades,
+          backgroundColor: ['#ffcc00', '#17a2b8', '#28a745', '#dc3545'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: { color: '#ffffff' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

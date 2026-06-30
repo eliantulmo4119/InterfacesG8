@@ -6,5 +6,8 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('', include('vulca.urls')), 
     path('productos/', include('productos.urls')),
+    path('proveedores/', include('proveedores.urls')),
+    
+    # 🚨 NUEVA APLICACIÓN: GESTIÓN DE CLIENTES 🚨
+    path('clientes/', include('clientes.urls')),
 ]
-# hola

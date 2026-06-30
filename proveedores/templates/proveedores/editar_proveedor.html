@@ -1,0 +1,72 @@
+{% load static %}
+{% include "private/header.html" %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="main-panel" style="background: #1a1a24; min-height: 100vh;">
+  <div class="content-wrapper">
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card bg-dark border-secondary text-white">
+          <div class="card-body">
+
+            <h4 class="card-title text-warning font-weight-bold"><i class="mdi mdi-account-convert mr-2"></i>Modificar Proveedor</h4>
+            <p class="text-muted mb-2">Actualizando: {{ proveedor.nombre_empresa }}</p>
+            <hr class="border-secondary">
+
+            <form method="POST" id="formEditarProveedor">
+              {% csrf_token %}
+
+              <div class="form-group mb-2">
+                <input type="text" class="form-control bg-secondary text-white border-0" name="nombre_empresa" value="{{ proveedor.nombre_empresa }}" placeholder="Nombre Empresa" required>
+              </div>
+
+              <div class="form-group mb-2">
+                <input type="text" class="form-control bg-secondary text-white border-0" name="representante" value="{{ proveedor.representante }}" placeholder="Representante" required>
+              </div>
+
+              <div class="form-group mb-2">
+                <input type="text" class="form-control bg-secondary text-white border-0" name="telefono" value="{{ proveedor.telefono }}" placeholder="Teléfono" maxlength="10" required>
+              </div>
+
+              <div class="form-group mb-2">
+                <input type="email" class="form-control bg-secondary text-white border-0" name="correo" value="{{ proveedor.correo }}" placeholder="Correo" required>
+              </div>
+
+              <div class="form-group mb-3">
+                <input type="text" class="form-control bg-secondary text-white border-0" name="direccion" value="{{ proveedor.direccion }}" placeholder="Dirección" required>
+              </div>
+
+              <button type="submit" class="btn btn-info text-white">Actualizar</button>
+              <a href="{% url 'listar_proveedores' %}" class="btn btn-danger">Cancelar</a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include "private/footer.html" %}
+</div>
+
+<script>
+document.getElementById("formEditarProveedor").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  Swal.fire({
+    title: "¿Actualizar datos del proveedor?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí",
+  }).then((r)=>{
+    if(r.isConfirmed){
+      this.submit();
+    }
+  });
+});
+</script>

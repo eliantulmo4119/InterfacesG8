@@ -1,0 +1,73 @@
+{% load static %}
+{% include "private/header.html" %}
+
+<div class="main-panel">
+  <div class="content-wrapper">
+
+    <!-- MENSAJES DE ERROR O ÉXITO -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <div class="row mb-3 align-items-center">
+      <div class="col-6">
+        <h4 class="card-title mb-0">Gestión de Clientes</h4>
+      </div>
+      <div class="col-6 text-right">
+        <a href="{% url 'crear_cliente' %}" class="btn btn-success"><i class="mdi mdi-plus"></i> Nuevo Cliente</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Cédula / RUC</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th class="text-center">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for c in clientes %}
+                  <tr>
+                    <td>{{ c.cedula_ruc }}</td>
+                    <td class="font-weight-bold">{{ c.nombre }}</td>
+                    <td>{{ c.telefono|default:"-" }}</td>
+                    <td>{{ c.email|default:"-" }}</td>
+                    <td>{{ c.direccion|default:"-" }}</td>
+                    <td class="text-center">
+                      <a href="{% url 'editar_cliente' c.id %}" class="btn btn-info btn-sm"><i class="mdi mdi-pencil"></i></a>
+                      <a href="{% url 'eliminar_cliente' c.id %}" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de eliminar este cliente?');"><i class="mdi mdi-delete"></i></a>
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td colspan="6" class="text-center text-muted">No se encontraron clientes registrados.</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include "private/footer.html" %}
+</div>

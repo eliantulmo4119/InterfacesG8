@@ -1,0 +1,65 @@
+{% load static %}
+{% include "private/header.html" %}
+
+<!-- SWEETALERT2 PARA CONFIRMACIONES VISUALES -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="main-panel">
+  <div class="content-wrapper">
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+
+            <h4 class="card-title">Crear Cliente</h4>
+            <hr>
+
+            <form method="POST" id="formCliente">
+              {% csrf_token %}
+
+              <input type="text" class="form-control mb-2" name="cedula_ruc" placeholder="Cédula o RUC" required>
+
+              <input type="text" class="form-control mb-2" name="nombre" placeholder="Nombre Completo" required>
+
+              <input type="text" class="form-control mb-2" name="telefono" placeholder="Teléfono">
+
+              <input type="email" class="form-control mb-2" name="email" placeholder="Correo Electrónico">
+
+              <textarea class="form-control mb-3" name="direccion" placeholder="Dirección domiciliaria" rows="3"></textarea>
+
+              <button type="submit" class="btn btn-success">Guardar</button>
+              <a href="{% url 'listar_clientes' %}" class="btn btn-danger">Cancelar</a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% include "private/footer.html" %}
+</div>
+
+<script>
+document.getElementById("formCliente").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  Swal.fire({
+    title: "¿Guardar cliente?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText: "Sí, registrar",
+    cancelButtonText: "No",
+    confirmButtonColor: "#2cbb54",
+    cancelButtonColor: "#f96868"
+  }).then((r)=>{
+    if(r.isConfirmed){
+      this.submit();
+    }
+  });
+});
+</script>
