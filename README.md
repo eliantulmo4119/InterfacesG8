@@ -1,1 +1,1 @@
-optimizar rendimiento del sitio
+actualizar instrucciones de instalación
