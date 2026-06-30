@@ -1,1 +1,1 @@
- implementar roles de administrador y empleado
+crear estructura inicial del proyecto
