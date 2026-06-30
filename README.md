@@ -1,1 +1,1 @@
-Corregir cálculo del total de servicios
+Agregar paginación en clientes
