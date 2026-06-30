@@ -1,1 +1,1 @@
-Corregir validación del formulario de clientes
+Agregar búsqueda de clientes
