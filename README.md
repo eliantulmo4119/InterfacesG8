@@ -1,1 +1,1 @@
- reorganizar estructura de carpetas
+ optimizar código CSS
