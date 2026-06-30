@@ -1,1 +1,1 @@
-Crear módulo de inventario
+Registrar salida de productos
