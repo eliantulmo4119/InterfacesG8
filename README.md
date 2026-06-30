@@ -1,1 +1,1 @@
- minimizar archivos CSS y JS
+validar navegación entre páginas
