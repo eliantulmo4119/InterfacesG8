@@ -1,1 +1,1 @@
- registrar compras a proveedores
+agregar control de asistencia del personal
