@@ -1,1 +1,1 @@
- verificar compatibilidad móvil
+agregar sección de promociones
