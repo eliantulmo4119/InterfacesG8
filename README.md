@@ -1,1 +1,1 @@
-implementar módulo de promociones
+ implementar roles de administrador y empleado
