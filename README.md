@@ -1,1 +1,1 @@
-corregir validación de campos obligatorios
+ agregar iconos de redes sociales
