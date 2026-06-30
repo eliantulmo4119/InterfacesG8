@@ -1,1 +1,1 @@
- generar reporte de servicios realizados
+implementar búsqueda por número de factura
