@@ -1,1 +1,1 @@
- solucionar enlaces rotos
+ arreglar visualización en dispositivos móviles
