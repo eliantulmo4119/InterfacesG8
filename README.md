@@ -1,1 +1,1 @@
- optimizar tipografías
+ mejorar diseño del encabezado
