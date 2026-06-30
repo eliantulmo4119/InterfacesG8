@@ -1,1 +1,1 @@
-Registrar salida de productos
+Agregar generación de facturas
