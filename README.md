@@ -1,1 +1,1 @@
- implementar control de stock mínimo
+ registrar compras a proveedores
