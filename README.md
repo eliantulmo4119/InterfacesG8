@@ -1,1 +1,1 @@
- implementar registro de ventas y facturación
+ implementar búsqueda de clientes por nombre y placa
