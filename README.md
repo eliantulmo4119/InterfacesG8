@@ -1,1 +1,1 @@
- optimizar carga de recursos
+ mejorar rendimiento del sitio
