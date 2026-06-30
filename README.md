@@ -1,1 +1,1 @@
-agregar módulo de caja diaria
+ implementar cierre de caja diario
