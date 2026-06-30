@@ -1,1 +1,1 @@
- corregir errores menores reportados durante las pruebas finales
+ registrar ingreso de productos al inventario
