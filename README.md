@@ -1,1 +1,1 @@
- arreglar visualización en dispositivos móviles
+ reorganizar estructura de carpetas
