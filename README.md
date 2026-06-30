@@ -1,1 +1,1 @@
- registrar ingreso de productos al inventario
+ implementar control de stock mínimo
