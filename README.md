@@ -1,1 +1,1 @@
-crear página sobre nosotros
+mejorar diseño responsivo
