@@ -1,1 +1,1 @@
-optimizar tipografía del sitio
+corregir enlaces del menú
